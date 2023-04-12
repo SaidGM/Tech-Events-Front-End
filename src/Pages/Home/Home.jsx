@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import Footer from '../../Components/footer/Footer'
 import Article from '../../Components/sectionArticle/Article'
-import EventsServices from '../../ApiServicies/eventsServices'
+import EventsServices from '../../Api/eventsServices'
 
 function Home() {
   const [item, setItem] = useState([])
@@ -23,25 +23,25 @@ function Home() {
                       <button className='buttonStyle'>Master Class</button>
                       <button className='buttonStyle'>Webinar</button>
                   </div>
-                  <section className='mainPage'>
+                  <div className='mainPage'>
                       <div className='containerFather'>
                           <div className='title'>
                               <h2>Eventos Destacados</h2>
                               <h4 className='h4'>The best events of the week</h4>
                           </div>
-                          <div className='sectionEvent' >
+                          <section className='sectionEvent' >
                             <Article
                               date="MARZO 11 2023 | 23:55 - 05:00"
                               capacity="20"
                               titleArticle="Taller de Buenas Prácticas JavaScript"
                               img="https://1.bp.blogspot.com/-jw-FAFL2t-w/XrGCai-oyVI/AAAAAAAACOo/C46oP8cf7WcmrzAdhEteptt3Gbvt9xd3wCLcBGAsYHQ/s1600/maxresdefault.jpg"
                             />
-                          </div>
+                          </section>
                           <div className='title'>
                               <h2 className='titleAll'>Todos los eventos</h2>
                               <h4 className='h4'>Complete list the best events</h4>
                           </div>
-                          <div className='sectionEvent' >
+                          <section className='sectionEvent' >
                             {item.map((i)=>{
                               return(
                                 <Article
@@ -54,10 +54,10 @@ function Home() {
                                 />
                               )
                             })}
-                          </div>
+                          </section>
                       </div>
                       <Footer />
-                  </section>
+                  </div>
               </div>
           </main>
     </>
