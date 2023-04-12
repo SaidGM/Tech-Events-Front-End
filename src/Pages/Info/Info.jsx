@@ -17,10 +17,10 @@ function Info() {
                 <div className='containerFlex'>
                     <div className='containerInfo'>
                         <h2>Info</h2>
-                        <h4 className='hDate'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, dignissimos vitae inventore veniam quas provident, excepturi similique voluptate debitis voluptatibus alias obcaecati molestiae tempore quia beatae sed, in a error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente culpa quaerat inventore reprehenderit dolorem sit sed labore consectetur? Debitis quas asperiores autem ad ipsum laudantium quod repellendus sequi voluptas quaerat.</h4>
+                        <h4 className='hInfo'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, dignissimos vitae inventore veniam quas provident, excepturi similique voluptate debitis voluptatibus alias obcaecati molestiae tempore quia beatae sed, in a error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente culpa quaerat inventore reprehenderit dolorem sit sed labore consectetur? Debitis quas asperiores autem ad ipsum laudantium quod repellendus sequi voluptas quaerat.</h4>
                     </div>
                     <div className='containerOptions'>
-                        <div className='containerOnline'>
+                        <div className='containerOnline containerBox'>
                             <h3>Evento Online :</h3>
                             <h3 className='hSpace'>Zoom</h3>
                         </div>
@@ -29,10 +29,9 @@ function Info() {
                             <h3 className='hSpace'>Intermediate</h3>
                         </div>
                         <button className='ButtonApunt'>Apúntate</button>
-                        
                     </div>
-                    <Footer/>
                 </div>
+                <Footer/>
             </div>          
         </div>
       </main>
