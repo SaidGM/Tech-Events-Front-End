@@ -1,8 +1,10 @@
 import React from 'react'
 import "./Home.css"
+import Footer from '../../Components/footer/Footer'
 
 function Home() {
   return (
+    <>
     <main>
       <div className='categories'>
               <div className='containerEvents'>
@@ -39,10 +41,29 @@ function Home() {
                               <h5 className='assistantsEvent marginLeft'> 15 / 25 asistentes</h5>
                           </article>
                       </div>
+                      <div className='sectionEvent'>
+                          <article className='articleEvent'>
+                              <img src="https://1.bp.blogspot.com/-jw-FAFL2t-w/XrGCai-oyVI/AAAAAAAACOo/C46oP8cf7WcmrzAdhEteptt3Gbvt9xd3wCLcBGAsYHQ/s1600/maxresdefault.jpg" alt="" className='imgEvent' />
+                              <h5 className='eventDate marginLeft'>MARZO 11 2023 | 23:55 - 05:00</h5>
+                              <h4 className='titleEvent marginLeft'>Taller de Buenas Prácticas JavaScript</h4>
+                              <h5 className='assistantsEvent marginLeft'> 15 / 25 asistentes</h5>
+                          </article>
+                      </div> 
+                      <div className='sectionEvent'>
+                          <article className='articleEvent'>
+                              <img src="https://1.bp.blogspot.com/-jw-FAFL2t-w/XrGCai-oyVI/AAAAAAAACOo/C46oP8cf7WcmrzAdhEteptt3Gbvt9xd3wCLcBGAsYHQ/s1600/maxresdefault.jpg" alt="" className='imgEvent' />
+                              <h5 className='eventDate marginLeft'>MARZO 11 2023 | 23:55 - 05:00</h5>
+                              <h4 className='titleEvent marginLeft'>Taller de Buenas Prácticas JavaScript</h4>
+                              <h5 className='assistantsEvent marginLeft'> 15 / 25 asistentes</h5>
+                          </article>
+                      </div> 
                   </div>
-            </section>       
-      </div>
+                  <Footer/>  
+            </section>  
+      </div> 
     </main>
+    
+    </>
   )
 }
 

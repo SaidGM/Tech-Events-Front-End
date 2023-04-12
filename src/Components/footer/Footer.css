@@ -10,11 +10,9 @@
 }
 
 .footer{
-    position: static;
-    display: block;
-    padding-top: 90px;
+    width: 100%;
     background-color:#F8F8F8;
-    height: 430px;
+    height: max-content;
     color: #152732;
 }
 .h4Work{
