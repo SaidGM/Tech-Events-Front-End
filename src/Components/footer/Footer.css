@@ -10,13 +10,14 @@
 }
 
 .footer{
-    display: relative;
-    bottom: 0;
+    position: static;
+    display: block;
+    padding-top: 90px;
     background-color:#F8F8F8;
-    height: 310px;
+    height: 430px;
     color: #152732;
 }
-.h4{
+.h4Work{
     text-align: center;
 }
 

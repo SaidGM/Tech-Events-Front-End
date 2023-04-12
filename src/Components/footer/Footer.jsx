@@ -10,7 +10,7 @@ function Footer() {
       <div className='box-father'>
         <div className='box-letters-top'>
           <h4>Marca</h4>
-          <h4 className='h4'>Trabaja con <br/> nosotros </h4>
+          <h4 className='h4Work'>Trabaja con <br/> nosotros </h4>
           <h4>Privacidad</h4>
         </div>
         <div className='box-letters-bottom'>
