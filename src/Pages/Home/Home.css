@@ -9,7 +9,6 @@ main{
     width: 100%;
     color: #152731
 }
-
 .events{
     font-weight: 600;
 }
@@ -54,9 +53,9 @@ main{
 .h4{
     font-weight: 400;
 }
-.sectionEvent{
-    display: flex;
-    align-items: center;
-    height: 280px;
-    margin: 10px 0;
+
+@media (min-width: 1100px){
+    .containerFather{
+        margin-left: 45px;
+    }
 }
