@@ -53,6 +53,19 @@ main{
 .h4{
     font-weight: 400;
 }
+.sectionEvent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    align-items: center;
+    height: max-content;
+    margin: 10px 0;
+}
+.linkInfo{
+    height:290px;
+}
 
 @media (min-width: 1100px){
     .containerFather{

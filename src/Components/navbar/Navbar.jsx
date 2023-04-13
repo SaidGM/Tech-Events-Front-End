@@ -7,7 +7,9 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <header>
-      <h1 id="brand">EvenCoding {"<>"}</h1>
+      <Link to={'/'} className='brandA'>
+        <h1 id="brand">EvenCoding {"<>"}</h1>
+      </Link>
       <nav>
         <ul>
           <li><Link to={"/"}>Contacto</Link></li>

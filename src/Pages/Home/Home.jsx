@@ -3,6 +3,7 @@ import "./Home.css"
 import Footer from '../../Components/footer/Footer'
 import Article from '../../Components/sectionArticle/Article'
 import EventsServices from '../../Api/eventsServices'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const [item, setItem] = useState([])
@@ -44,14 +45,16 @@ function Home() {
                       <section className='sectionEvent' >
                         {item.map((i)=>{
                           return(
-                            <Article
-                              key={i.id}
-                              id={i.id}
-                              date={`${i.fecha} | ${i.hora}`}
-                              capacity={i.capacity}
-                              titleArticle={i.title}
-                              img={i.urlImage}
-                            />
+                            <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
+                              <Article
+                                key={i.id}
+                                id={i.id}
+                                date={`${i.fecha} | ${i.hora}`}
+                                capacity={i.capacity}
+                                titleArticle={i.title}
+                                img={i.urlImage}
+                              />
+                            </Link> 
                           )
                         })}
                       </section>

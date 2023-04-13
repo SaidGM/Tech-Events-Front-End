@@ -1,17 +1,7 @@
-.sectionEvent{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: max-content;
-    align-items: center;
-    height: max-content;
-    margin: 10px 0;
-}
 .articleEvent{
     margin: 10px 0px;
     width: 310px;
-    height: 90%;
+    height: max-content;
     background-color: #FFFF;
     border-radius: 15px;
 }
@@ -23,9 +13,11 @@
 }
 .marginLeft{
     margin-left: 8px;
+    color: #152732;
 }
 .eventDate{
     font-weight: 400;
+    color: #152732;
 }
 
 .assistantsEvent{

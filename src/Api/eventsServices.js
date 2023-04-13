@@ -8,6 +8,11 @@ const EventsServices = {
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },
+    byIdEvents(id) {
+        return axios.get(url + `/${id}`)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
 
 
 }

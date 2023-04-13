@@ -56,6 +56,11 @@
     display: none;
     cursor: pointer;
   }
+  .brandA{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .hamburger-icon div {
     width: 35px;
