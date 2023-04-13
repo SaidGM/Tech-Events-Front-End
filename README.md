@@ -1,4 +1,3 @@
-:uk:
 ## Project description
 Project in development in which the administrator has the power to execute the CRUD (Create, Read, Update and Delete), which is used to refer to the basic functions in databases or the persistence layer in software. Therefore, the administrator can add, edit and delete web events, in this case workshops, webinars, master classes, reflecting it in the database. EvenCoding is focused on the administrator profile and its main functions.
 
