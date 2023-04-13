@@ -18,7 +18,7 @@ function Home() {
 console.log(itemHighlights);
   return (
     <>
-      <main>
+      <main className='mainHome'>
           <div className='categories'>
               <div className='containerEvents'>
                   <h4 className='events'>Events:</h4>

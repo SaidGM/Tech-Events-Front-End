@@ -5,6 +5,7 @@
     background-color: #FFFF;
     border-radius: 15px;
     position: relative;
+    padding-bottom: 10px;
 }
 .imgEvent{
     width: 100%;
@@ -52,6 +53,7 @@
     .sectionEvent{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 5px;
     }
     .articleEvent{
         height: 95%;

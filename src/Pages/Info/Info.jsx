@@ -24,7 +24,7 @@ function Info() {
             <div className='containerInfoTitle'>
                 <img src={eventInfo.urlImage} alt="" className='imgInfo' />
                 <div className='containerTitle'>
-                   <h4 className='hDate'>{eventInfo.fecha} | {eventInfo.hora}</h4>
+                   <h4 className='hDate'>{eventInfo.eventDate} | {eventInfo.eventTime}</h4>
                    <h3 className='hTitle'>{eventInfo.title}</h3>
                    <h5 className='hAsistentes'>15 / {eventInfo.capacity} asistentes</h5>
                 </div>
@@ -45,7 +45,7 @@ function Info() {
                             <h3>Nivel :</h3>
                             <h3 className='hSpace'>
                               <Icon icon="material-symbols:person" color="#152732" width="32" height="32" />
-                              {eventInfo.nivel}
+                              {eventInfo.degree}
                             </h3>
                         </div>
                         <button className='ButtonApunt'>Apúntate</button>
