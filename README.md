@@ -44,6 +44,8 @@ npm start
 [@saidGM](https://github.com/SaidGM)<br>
 [@CarlosJavierVilla](https://github.com/CarlosJavierVilla)<br>
 [@vanessa-cp](https://github.com/vanessa-cp)<br>
+[@Custodioluis](https://github.com/Custodioluis)<br>
+[@Pere1J](https://github.com/Pere1J)<br>
 
 
 <br><br>
@@ -97,3 +99,5 @@ npm start
 [@saidGM](https://github.com/SaidGM)<br>
 [@CarlosJavierVilla](https://github.com/CarlosJavierVilla)<br>
 [@vanessa-cp](https://github.com/vanessa-cp)<br>
+[@Custodioluis](https://github.com/Custodioluis)<br>
+[@Pere1J](https://github.com/Pere1J)<br>
