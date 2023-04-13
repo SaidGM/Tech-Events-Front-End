@@ -1,3 +1,4 @@
+🇬🇧:
 ## Project description
 Project in development in which the administrator has the power to execute the CRUD (Create, Read, Update and Delete), which is used to refer to the basic functions in databases or the persistence layer in software. Therefore, the administrator can add, edit and delete web events, in this case workshops, webinars, master classes, reflecting it in the database. EvenCoding is focused on the administrator profile and its main functions.
 
@@ -48,7 +49,7 @@ npm start
 <br><br>
 
 
-:es:
+es:
 ## Descripción del proyecto
 Proyecto en desarrollo en el cual el administrador tiene el poder de ejecutar el CRUD (del original en inglés: Create, Read, Update and Delete), que se usa para referirse a las funciones básicas en bases de datos o la capa de persistencia en un software. Por ende, el administrador puede de añadir, editar y borrar los eventos de la web, en este caso talleres, webinars, master clases, reflejándolo en la base de datos. 
 EvenCoding, está centrado en el perfil de administrador y sus principales funciones.
