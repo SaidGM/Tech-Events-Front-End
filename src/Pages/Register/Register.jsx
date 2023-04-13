@@ -9,17 +9,17 @@ function Register() {
       <section className='sectionRegister'>
         <div class="form-box-register">
           <div class="form-value">
-            <form action="" className='formLogIn'>
+            <form action="" className='formRegister'>
               <h2 className='htmlFor'>Register</h2>
-              <div class="inputbox">
+              <div class="inputbox inputbox-register">
                 <input type="email" required />
                 <label htmlFor="">Nombre</label>
               </div>
-              <div class="inputbox">
+              <div class="inputbox inputbox-register">
                 <input type="email" required />
                 <label htmlFor="">Email</label>
               </div>
-              <div class="inputbox">
+              <div class="inputbox inputbox-register">
                 <input type="password" required></input>
                 <label for="">Password</label>
               </div>

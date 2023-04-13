@@ -3,16 +3,16 @@
     padding: 0;
     font-family: 'poppins',sans-serif;
 }
-.sectionLogin{
+.sectionRegister{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 90vh;
     width: 100%;
     background-position: center;
     background-size: cover;
 }
-.form-box{
+.form-box-register{
     position: relative;
     width: 400px;
     height: 450px;
@@ -60,20 +60,7 @@ top: -5px;
     padding:0 35px 0 5px;
     color: #fff;
 }
-.inputbox ion-icon{
-    position: absolute;
-    right: 8px;
-    color: #fff;
-    font-size: 1.2em;
-    top: 20px;
-}
-.forget{
-    margin: -15px 0 15px ;
-    font-size: .9em;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;  
-}
+
 
 .forget label input{
     margin-right: 3px;
@@ -113,17 +100,8 @@ top: -5px;
     text-decoration: underline;
 }
 @media (max-width: 600px) {
-    .form-box{
-        position: relative;
+    .form-box-register{
         width: 350px;
-        height: 400px;
-        background: transparent;
-        border: 2px solid rgba(255,255,255,0.5);
-        border-radius: 20px;
-        backdrop-filter: blur(15px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
+        height: 450px;   
     }
 }

@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 function LogIn() {
   return (
       <>
-          <section className='sectionLogin'>
-              <div class="form-box">
+          <section className='sectionLogIn'>
+              <div class="form-box-login">
                   <div class="form-value">
                       <form action="" className='formLogIn'>
                           <h2 className='htmlFor'>Login</h2>

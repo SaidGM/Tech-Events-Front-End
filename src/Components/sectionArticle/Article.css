@@ -4,12 +4,25 @@
     height: max-content;
     background-color: #FFFF;
     border-radius: 15px;
+    position: relative;
 }
 .imgEvent{
     width: 100%;
     height: 160px;
     border-radius: 15px 15px 0 0;
     object-fit: cover;
+}
+.imgOpacity{
+    opacity: 0.1;
+}
+.caducateNone{
+    display: none;
+}
+.caducate{
+    position: absolute;
+    color: #152732;
+    top: 30%;
+    left: 30%;
 }
 .marginLeft{
     margin-left: 8px;

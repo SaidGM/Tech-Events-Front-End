@@ -6,14 +6,16 @@ import EventsServices from '../../Api/eventsServices'
 import { Link } from 'react-router-dom'
 
 function Home() {
-  const [item, setItem] = useState([])
-
+  const [itemEvents, setItemEvents] = useState([])
+  const [itemHighlights, setItemsHighlights] = useState([])
+  
   useEffect(()=>{
     EventsServices.allEvents()
-    .then((data)=>{setItem(data)})
+    .then((data)=>{setItemEvents(data)})
+    EventsServices.allEventsHighlight()
+    .then((data)=>{setItemsHighlights(data)})
   },[])
-
-  console.log(item);
+console.log(itemHighlights);
   return (
     <>
       <main>
@@ -31,25 +33,34 @@ function Home() {
                           <h4 className='h4'>The best events of the week</h4>
                       </div>
                       <section className='sectionEvent' >
-                        <Article
-                          date="MARZO 11 2023 | 23:55 - 05:00"
-                          capacity="20"
-                          titleArticle="Taller de Buenas Prácticas JavaScript"
-                          img="https://1.bp.blogspot.com/-jw-FAFL2t-w/XrGCai-oyVI/AAAAAAAACOo/C46oP8cf7WcmrzAdhEteptt3Gbvt9xd3wCLcBGAsYHQ/s1600/maxresdefault.jpg"
-                        />
+                        {itemHighlights.map((i)=>{
+                        return(
+                          <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
+                          <Article
+                              active={i.active}
+                              key={i.id}
+                              id={i.id}
+                              date={`${i.eventDate} | ${i.eventTime}`}
+                              capacity={i.capacity}
+                              titleArticle={i.title}
+                              img={i.urlImage}
+                            />
+                          </Link>
+                        )})}
                       </section>
                       <div className='title'>
                           <h2 className='titleAll'>Todos los eventos</h2>
                           <h4 className='h4'>Complete list the best events</h4>
                       </div>
                       <section className='sectionEvent' >
-                        {item.map((i)=>{
+                        {itemEvents.map((i)=>{
                           return(
                             <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
                               <Article
+                                active={i.active}
                                 key={i.id}
                                 id={i.id}
-                                date={`${i.fecha} | ${i.hora}`}
+                                date={`${i.eventDate} | ${i.eventTime}`}
                                 capacity={i.capacity}
                                 titleArticle={i.title}
                                 img={i.urlImage}

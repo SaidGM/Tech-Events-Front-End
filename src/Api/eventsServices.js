@@ -13,6 +13,12 @@ const EventsServices = {
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },
+    allEventsHighlight() {
+        return axios.get(url + `/highlight`)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
+
 
 
 }

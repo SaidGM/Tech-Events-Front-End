@@ -24,8 +24,8 @@
 }
 .imgInfo{
     width: 320px;
-    height: 200px;
-    border-radius: 15px;
+    height: 180px;
+    border-radius: 30px;
     position: absolute;
     top: -105px;
     margin: auto;
@@ -87,7 +87,7 @@
     font-family: 'Poppins';
     font-weight: 600;
     border-radius: 30px;
-    padding: 5px 29px;
+    padding: 5px 27px;
     margin-top: 20px;
     border: none;
 }
@@ -108,13 +108,6 @@
         border-radius: 50px 0 0 0;
         margin: 0;
     }
-    .ButtonApunt{
-        position: relative;
-        left: -840px;
-        top: -17px;
-        padding: 3px 30px;
-        font-size: 1.3em;
-    }
     .containerBox{
         margin-top: 30px;
     }
@@ -131,7 +124,7 @@
     .imgInfo{
         object-fit: contain;
         width: 60%;
-        height: 50%;
+        height: 51%;
         top: -260px;
         border-radius: 50px;
     }
