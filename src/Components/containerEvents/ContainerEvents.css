@@ -1,0 +1,21 @@
+.containerEvents{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 350px;
+    height: 50px;
+    margin-left: 30px;
+}
+.events{
+    font-weight: 600;
+}
+.buttonStyle{
+    font-size: 0.85em;
+    font-family: "Poppins";
+    color: #152731;
+    font-weight: 600;
+    border: none;
+    background-color: #F8F8F8;
+    border-radius: 35px;
+    padding: 5px 8px;
+}

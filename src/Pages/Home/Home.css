@@ -9,9 +9,6 @@
     width: 100%;
     color: #152731
 }
-.events{
-    font-weight: 600;
-}
 .categories{
     position: relative;
     height: 150px;
@@ -19,25 +16,6 @@
     border-radius: 60px 0 0 0;
     background-color: #D9D9D9;
 }
-.containerEvents{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 350px;
-    height: 50px;
-    margin-left: 30px;
-}
-.buttonStyle{
-    font-size: 0.85em;
-    font-family: "Poppins";
-    color: #152731;
-    font-weight: 600;
-    border: none;
-    background-color: #F8F8F8;
-    border-radius: 35px;
-    padding: 5px 8px;
-}
-
 .mainPage{
     background-color: #F8F8F8;
     position: absolute;

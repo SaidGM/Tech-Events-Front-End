@@ -4,6 +4,7 @@ import Footer from '../../Components/footer/Footer'
 import Article from '../../Components/sectionArticle/Article'
 import EventsServices from '../../Api/eventsServices'
 import { Link } from 'react-router-dom'
+import ContainerEvents from '../../Components/containerEvents/ContainerEvents'
 
 function Home() {
   const [itemEvents, setItemEvents] = useState([])
@@ -15,17 +16,12 @@ function Home() {
     EventsServices.allEventsHighlight()
     .then((data)=>{setItemsHighlights(data)})
   },[])
-console.log(itemHighlights);
+  
   return (
     <>
       <main className='mainHome'>
           <div className='categories'>
-              <div className='containerEvents'>
-                  <h4 className='events'>Events:</h4>
-                  <button className='buttonStyle'>Talleres</button>
-                  <button className='buttonStyle'>Master Class</button>
-                  <button className='buttonStyle'>Webinar</button>
-              </div>
+              <ContainerEvents/>
               <div className='mainPage'>
                   <div className='containerFather'>
                       <div className='title'>
