@@ -15,7 +15,7 @@ function Navbar() {
           <li><Link to={"/"}>Contacto</Link></li>
           <li><Link to={"/admin"}>Administrador</Link></li>
           <li id="login"><Link to={"/login"} >Login</Link></li>
-          <li id="signup"><Link to={"/signup"}>Register</Link></li>
+          <li id="signup"><Link to={"/register"}>Register</Link></li>
         </ul>
       </nav>
       <div className={`hamburger-icon ${isOpen && "open"}`}
@@ -27,7 +27,7 @@ function Navbar() {
           <li className='liNavbar'><Link to="/">Contacto</Link></li>
           <li className='liNavbar'><Link to="/">Administrador</Link></li>
           <li  className='liNavbar'id="login"><Link to={"/login"} >Login</Link></li>
-          <li  className='liNavbar'id="signup"><Link to={"/signup"}>Register</Link></li>
+          <li  className='liNavbar'id="signup"><Link to={"/register"}>Register</Link></li>
         </ul>
       </div>
     </header>
