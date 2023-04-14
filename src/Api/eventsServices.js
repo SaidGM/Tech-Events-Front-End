@@ -23,7 +23,7 @@ const EventsServices = {
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },
-    allCategories(id) {
+    categoryById(id) {
         return axios.get(url + `/category/ ${id}`)
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
