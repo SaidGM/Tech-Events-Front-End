@@ -13,7 +13,7 @@ function ContainerEvents() {
 
   return (
       <div className='containerEvents'>
-          <h4 className='events'>Events:</h4>
+          <h4 className='events'>Eventos:</h4>
         {categories.map((i)=>{
             return(
                 <button className='buttonStyle'>{i.name}</button>

@@ -26,7 +26,7 @@ function Home() {
                   <div className='containerFather'>
                       <div className='title'>
                           <h2>Eventos Destacados</h2>
-                          <h4 className='h4'>The best events of the week</h4>
+                          <h4 className='h4'>Los mejores eventos de la semana</h4>
                       </div>
                       <section className='sectionEvent' >
                         {itemHighlights.map((i)=>{
@@ -46,7 +46,7 @@ function Home() {
                       </section>
                       <div className='title'>
                           <h2 className='titleAll'>Todos los eventos</h2>
-                          <h4 className='h4'>Complete list the best events</h4>
+                          <h4 className='h4'>Lista completa de todos los eventos</h4>
                       </div>
                       <section className='sectionEvent' >
                         {itemEvents.map((i)=>{
