@@ -23,9 +23,11 @@ const EventsServices = {
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },
-
-
-
+    allCategories(id) {
+        return axios.get(url + `/category/ ${id}`)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
 }
 
 export default EventsServices
