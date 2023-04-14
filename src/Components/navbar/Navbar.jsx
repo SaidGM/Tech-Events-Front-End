@@ -12,7 +12,7 @@ function Navbar() {
       </Link>
       <nav>
         <ul>
-          <li><Link to={"/"}>Contacto</Link></li>
+          <li><Link to={"/"}>Home</Link></li>
           <li><Link to={"/admin"}>Administrador</Link></li>
           <li id="login"><Link to={"/login"} >Login</Link></li>
           <li id="signup"><Link to={"/register"}>Register</Link></li>
@@ -24,7 +24,7 @@ function Navbar() {
         <div className="bar2" ></div>
         <div className="bar3" ></div>
         <ul className="mobile-menu">
-          <li className='liNavbar'><Link to="/">Contacto</Link></li>
+          <li className='liNavbar'><Link to="/">Home</Link></li>
           <li className='liNavbar'><Link to="/">Administrador</Link></li>
           <li  className='liNavbar'id="login"><Link to={"/login"} >Login</Link></li>
           <li  className='liNavbar'id="signup"><Link to={"/register"}>Register</Link></li>
