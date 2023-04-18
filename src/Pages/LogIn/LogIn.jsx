@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './LogIn.css'
 import Footer from '../../Components/footer/Footer'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios';
 import { AuthService } from '../../Api/AuthService';
 import EventsServices from '../../Api/eventsServices';
 
@@ -14,7 +13,6 @@ function LogIn() {
 
     const [login, setLogin] = useState(initialLogin);
     let navigate = useNavigate();
-    // console.log(login);
     
     const handleInput = (e) => {
     e.persist();
@@ -23,7 +21,7 @@ function LogIn() {
         [e.target.name]: e.target.value,
     });
     }; 
-    
+
     
     const loginSubmit = (e) => {
         e.preventDefault();
@@ -41,19 +39,16 @@ function LogIn() {
                 const authUser = {
                     token: res.token,
                     email: res.email,
-                    // id: res.id,
                 };
 
                 localStorage.setItem("auth_token", res.token);
                 localStorage.setItem("auth_email", res.email);
-                // localStorage.setItem("auth_id", res.id);
-
                 AuthService.saveAuthUser(authUser);
-
                 navigate("/");
             })
-            .catch((err) => console.error(err));
-    };
+            .catch((err) => 
+            console.error(err)
+            )};
 
   return (
       <>

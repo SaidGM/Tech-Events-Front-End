@@ -3,7 +3,6 @@ import './Register.css'
 import Footer from '../../Components/footer/Footer'
 import { Link, useNavigate} from 'react-router-dom'
 import EventsServices from '../../Api/eventsServices';
-import { AuthService } from '../../Api/AuthService';
 
 
 
@@ -18,7 +17,6 @@ function Register() {
 
   const [register, setRegister] = useState(initialRegister);
   const navigate = useNavigate() 
-  // console.log(register);
     const onChangeInput = e => {
       e.persist();
       setRegister({...register,[e.target.name]: e.target.value});

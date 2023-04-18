@@ -1,9 +1,10 @@
 import { Navigate, Outlet} from "react-router-dom";
+import { AuthService } from "../../Api/AuthService";
 
 
 const RequireAuth = ({children, redirectTo="*"}) => {
 
-    const userItem = JSON.parse(localStorage.getItem("auth_token"));
+    const userItem = AuthService.isAuth;
 
     if (!userItem) {  
     return <Navigate to={redirectTo}/>

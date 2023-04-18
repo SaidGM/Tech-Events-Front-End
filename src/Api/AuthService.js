@@ -1,7 +1,7 @@
 export const AuthService = {
   
   isAuthor(object) {
-    if (this.getAuthUser().id != object.author.id) return false;
+    if (this.getAuthUser().id !== object.author.id) return false;
     return true;
   },
 

@@ -53,8 +53,7 @@ export const serviceApi = () => {
   const logout = () => {
     //TODO REFACATOR AUTH LOCALSTORAGE
     localStorage.removeItem("auth_token");
-    localStorage.removeItem("auth_user");
-    localStorage.removeItem("auth_id");
+    localStorage.removeItem("auth_email");
     localStorage.removeItem("auth");
 
     window.location = "/crud-api-login";
