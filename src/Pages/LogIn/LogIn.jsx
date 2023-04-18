@@ -6,6 +6,7 @@ import { AuthService } from '../../Api/AuthService';
 import EventsServices from '../../Api/eventsServices';
 
 function LogIn() {
+
     const initialLogin = {
         email: "",
         password: ""
@@ -13,7 +14,7 @@ function LogIn() {
 
     const [login, setLogin] = useState(initialLogin);
     let navigate = useNavigate();
-    console.log(login);
+
     const handleInput = (e) => {
     e.persist();
     setLogin({
@@ -22,7 +23,6 @@ function LogIn() {
     });
     }; 
 
-    
     const loginSubmit = (e) => {
         e.preventDefault();
 
@@ -35,21 +35,24 @@ function LogIn() {
 
         EventsServices.loginByData(data)
             .then((res) => {
-                console.log(res);
 
                 const authUser = {
                     token: res.token,
                     email: res.email,
+                    role: res.role,
                 };
 
                 localStorage.setItem("auth_token", res.token);
                 localStorage.setItem("auth_email", res.email);
+                localStorage.setItem("auth_role", res.role);
                 AuthService.saveAuthUser(authUser);
                 navigate("/");
+                document.location.reload();
             })
-            .catch((err) => 
-            console.error(err)
-            )};
+            .catch((err) =>
+                console.error(err)
+            )
+    };
 
   return (
       <>

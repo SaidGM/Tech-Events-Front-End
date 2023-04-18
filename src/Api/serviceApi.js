@@ -1,7 +1,7 @@
 import axios from "../config/axios-config";
 
 export const serviceApi = () => {
-  let baseUrl = "127.0.0.1:8080";
+  let baseUrl = "http://localhost:8080";
   let url = "/events";
   let urlSignin = "/events/register";
   let urlLogin = "/events/login";

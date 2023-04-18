@@ -5,17 +5,18 @@ import Home from './Pages/Home/Home';
 import Info from './Pages/Info/Info';
 import LogIn from './Pages/LogIn/LogIn';
 import Register from './Pages/Register/Register';
-import RequireAuth from './Components/requireAuth/RequireAuth';
 
 function App() {
   return (
     <>
       <Navbar/>
       <Routes>
-        <Route path='/' element={<Home/>}/> 
-        <Route path='/infoEvent/:id' element={<Info/>}/> 
         <Route path='/login' element={<LogIn/>}/> 
         <Route path='/register' element={<Register/>}/> 
+        <Route path='/' element={<Home/>}/> 
+        <Route path='/infoEvent/:id' element={<Info/>}/>
+        <Route path='/admin' element={<Info/>}/>
+        <Route path='/form' element={<Info/>}/>
       </Routes>
     </> 
   ); 

@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Navbar.css"
-// import { Icon } from '@iconify/react';
-import { serviceApi } from '../../Api/serviceApi'
-import { AuthService } from '../../Api/AuthService'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const user = AuthService.isAuth
+  const user = JSON.parse(localStorage.getItem("auth"));
+
   const logout = () => {
-    //TODO REFACATOR AUTH LOCALSTORAGE
     localStorage.removeItem("auth_token");
     localStorage.removeItem("auth_email");
+    localStorage.removeItem("auth_role");
     localStorage.removeItem("auth");
     window.location = "/login";
-    
+    document.location.reload();
   };
+  
   return (
     <header>
       <Link to={'/'} className='brandA'>
@@ -26,7 +25,7 @@ function Navbar() {
           <li><Link to={"/"}>Home</Link></li>
           <li><Link to={"/admin"}>Administrador</Link></li>
           <li id="login">
-            { user 
+            {user 
              ? <Link onClick={logout} >Log Out</Link>
              : <Link to={"/login"} >Log In</Link>
             }
@@ -42,7 +41,12 @@ function Navbar() {
         <ul className="mobile-menu">
           <li className='liNavbar'><Link to="/">Home</Link></li>
           <li className='liNavbar'><Link to="/">Administrador</Link></li>
-          <li  className='liNavbar'id="login"><Link to={"/login"} >Login</Link></li>
+          <li  className='liNavbar'id="login">
+          {user 
+             ? <Link onClick={logout} >Log Out</Link>
+             : <Link to={"/login"} >Log In</Link>
+          }
+          </li>
           <li  className='liNavbar'id="signup"><Link to={"/register"}>Register</Link></li>
         </ul>
       </div>
