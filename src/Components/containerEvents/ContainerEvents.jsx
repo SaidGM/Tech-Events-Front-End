@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ContainerEvents.css'
 import EventsServices from '../../Api/eventsServices'
+import { Link } from 'react-router-dom'
 
 function ContainerEvents() {
 
@@ -16,7 +17,9 @@ function ContainerEvents() {
           <h4 className='events'>Eventos:</h4>
         {categories.map((i)=>{
             return(
+                <Link key={i.id} to={`/categorie/${i.id}`}>
                 <button className='buttonStyle' key={i.id}>{i.name}</button>
+                </Link>
             )
         })}
       </div>

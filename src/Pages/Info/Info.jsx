@@ -8,9 +8,7 @@ import { Icon } from '@iconify/react';
 function Info() {
 
   const [eventInfo, setEventInfo] = useState([])
-
   const {id} = useParams()
-  console.log(eventInfo);
 
   useEffect(()=>{
     EventsServices.byIdEvents(id)

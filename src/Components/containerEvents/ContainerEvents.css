@@ -19,3 +19,6 @@
     border-radius: 35px;
     padding: 5px 8px;
 }
+.cursorCategorie{
+    cursor: pointer;
+}
