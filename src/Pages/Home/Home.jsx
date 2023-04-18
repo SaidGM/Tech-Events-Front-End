@@ -9,6 +9,12 @@ import ContainerEvents from '../../Components/containerEvents/ContainerEvents'
 function Home() {
   const [itemEvents, setItemEvents] = useState([])
   const [itemHighlights, setItemsHighlights] = useState([])
+  function isFeatured(data){
+    return data == "true";
+  }
+
+  // const filterFeature = itemEvents.filter(isFeatured)
+  // console.log(filterFeature);
   
   useEffect(()=>{
     EventsServices.allEvents()
@@ -43,6 +49,20 @@ function Home() {
                             />
                           </Link>
                         )})}
+                        {/* {itemHighlights.filter(isFeatured)
+                          <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
+                          <Article
+                              active={i.active}
+                              key={i.id}
+                              id={i.id}
+                              date={`${i.eventDate} | ${i.eventTime}`}
+                              capacity={i.capacity}
+                              titleArticle={i.title}
+                              img={i.urlImage}
+                            />
+                          </Link>
+                          } */}
+                        
                       </section>
                       <div className='title'>
                           <h2 className='titleAll'>Todos los eventos</h2>

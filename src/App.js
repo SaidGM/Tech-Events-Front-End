@@ -12,12 +12,7 @@ function App() {
     <>
       <Navbar/>
       <Routes>
-        <Route path='/' element={
-          <RequireAuth>
-            <Home/>
-          </RequireAuth>
-        }/> 
-
+        <Route path='/' element={<Home/>}/> 
         <Route path='/infoEvent/:id' element={<Info/>}/> 
         <Route path='/login' element={<LogIn/>}/> 
         <Route path='/register' element={<Register/>}/> 

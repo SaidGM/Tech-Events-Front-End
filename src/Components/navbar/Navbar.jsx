@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom'
 import "./Navbar.css"
 // import { Icon } from '@iconify/react';
 import { serviceApi } from '../../Api/serviceApi'
+import { AuthService } from '../../Api/AuthService'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const user = AuthService.isAuth
+  const logout = () => {
+    //TODO REFACATOR AUTH LOCALSTORAGE
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("auth_email");
+    localStorage.removeItem("auth");
+    window.location = "/login";
+    
+  };
   return (
     <header>
       <Link to={'/'} className='brandA'>
@@ -15,7 +25,12 @@ function Navbar() {
         <ul>
           <li><Link to={"/"}>Home</Link></li>
           <li><Link to={"/admin"}>Administrador</Link></li>
-          <li id="login"><Link to={"/login"} >Login</Link></li>
+          <li id="login">
+            { user 
+             ? <Link onClick={logout} >Log Out</Link>
+             : <Link to={"/login"} >Log In</Link>
+            }
+          </li>
           <li id="signup"><Link to={"/register"}>Register</Link></li>
         </ul>
       </nav>

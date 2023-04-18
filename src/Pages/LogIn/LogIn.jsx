@@ -13,7 +13,7 @@ function LogIn() {
 
     const [login, setLogin] = useState(initialLogin);
     let navigate = useNavigate();
-    
+    console.log(login);
     const handleInput = (e) => {
     e.persist();
     setLogin({
@@ -30,6 +30,7 @@ function LogIn() {
             name: login.name,
             email: login.email,
             password: login.password,
+            token: login.token
         };
 
         EventsServices.loginByData(data)
@@ -55,7 +56,7 @@ function LogIn() {
           <section className='sectionLogIn'>
               <div className="form-box-login">
                   <div className="form-value">
-                      <form action="" className='formLogIn' onSubmit={loginSubmit}>
+                      <form action="" onSubmit={loginSubmit} className='formLogIn' >
                           <h2 className='htmlFor'>Login</h2>
                           <div className="inputbox">
                               <input onChange={handleInput} name='email' type="email" required />
