@@ -17,3 +17,7 @@ a{
     text-decoration: none;
     color: #FFFF;
 }
+
+button{
+    font-family: 'Poppins', sans-serif;
+}
