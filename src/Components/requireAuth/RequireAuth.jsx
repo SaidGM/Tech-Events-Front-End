@@ -1,7 +1,7 @@
 import { Navigate, Outlet} from "react-router-dom";
 
 
-const RequireAuth = ({children, redirectTo="*"}) => {
+const RequireAuth = ({children, redirectTo="/login"}) => {
 
     const userItem = JSON.parse(localStorage.getItem("auth"));
 
