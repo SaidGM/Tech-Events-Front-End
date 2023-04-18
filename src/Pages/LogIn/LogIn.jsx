@@ -22,7 +22,8 @@ function LogIn() {
         ...login,
         [e.target.name]: e.target.value,
     });
-    };
+    }; 
+    
     
     const loginSubmit = (e) => {
         e.preventDefault();
