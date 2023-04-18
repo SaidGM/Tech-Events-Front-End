@@ -79,6 +79,7 @@
     display: flex;
     width: 90%;
     justify-content: space-evenly;
+    padding-bottom: 10px;
 }
 .pTitles{
     font-size: 1.2em;
@@ -88,6 +89,30 @@
 
 @media (min-width: 1100px){
     .dashBoardRow{
-        grid-template-columns: repeat(3, 1fr) repeat(3, 30px);
+        grid-template-columns: 150px repeat(6, 155px) repeat(2, 30px);
+        text-align: center;
+    }
+    .itemsNone{
+        display: block;
+    }
+    .nivelForm{
+        text-align: center;
+    }
+    .titles{
+        display: grid;
+        grid-template-columns: 150px repeat(6, 155px) repeat(2, 30px);
+        text-align: center;
+    }  
+}
+@media (min-width: 1600px){
+    .dashBoardRow{
+        grid-template-columns: 250px 170px 250px 190px 230px 190px 240px 30px 30px;
+        text-align: center;
+    }
+    .editEvent{
+    margin-left: 100px;
+    }
+    .deleteEvent{
+    margin-left: 120px;
     }
 }
