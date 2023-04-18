@@ -9,7 +9,6 @@ import ContainerEvents from '../../Components/containerEvents/ContainerEvents'
 function Home() {
   const [itemEvents, setItemEvents] = useState([])
   const [itemHighlights, setItemsHighlights] = useState([])
- 
 
   useEffect(()=>{
     EventsServices.allEvents()
@@ -31,19 +30,22 @@ function Home() {
               </div>
               <section className='sectionEvent' >
                 {itemHighlights.map((i) => {
-                  return (
-                    <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
-                      <Article
-                        active={i.active}
-                        key={i.id}
-                        id={i.id}
-                        date={`${i.eventDate} | ${i.eventTime}`}
-                        capacity={i.capacity}
-                        titleArticle={i.title}
-                        img={i.urlImage}
-                      />
-                    </Link>
-                  )
+                  if (i.active) {
+                    return (
+                      <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
+                        <Article
+                          active={i.active}
+                          key={i.id}
+                          id={i.id}
+                          date={`${i.eventDate} | ${i.eventTime}`}
+                          capacity={i.capacity}
+                          titleArticle={i.title}
+                          img={i.urlImage}
+                        />
+                      </Link>
+                    )
+                  }
+                  return null
                 })}
               </section>
               <div className='title'>
@@ -52,19 +54,40 @@ function Home() {
               </div>
               <section className='sectionEvent' >
                 {itemEvents.map((i) => {
-                  return (
-                    <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
-                      <Article
-                        active={i.active}
-                        key={i.id}
-                        id={i.id}
-                        date={`${i.eventDate} | ${i.eventTime}`}
-                        capacity={i.capacity}
-                        titleArticle={i.title}
-                        img={i.urlImage}
-                      />
-                    </Link>
-                  )
+                  if (i.active) {
+                    return (
+                      <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
+                        <Article
+                          active={i.active}
+                          key={i.id}
+                          id={i.id}
+                          date={`${i.eventDate} | ${i.eventTime}`}
+                          capacity={i.capacity}
+                          titleArticle={i.title}
+                          img={i.urlImage}
+                        />
+                      </Link>
+                    )
+                  }
+                  return null
+                })}
+                {itemEvents.map((i) => {
+                  if (!i.active) {
+                    return (
+                      <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
+                        <Article
+                          active={i.active}
+                          key={i.id}
+                          id={i.id}
+                          date={`${i.eventDate} | ${i.eventTime}`}
+                          capacity={i.capacity}
+                          titleArticle={i.title}
+                          img={i.urlImage}
+                        />
+                      </Link>
+                    )
+                  }
+                  return null
                 })}
               </section>
             </div>
