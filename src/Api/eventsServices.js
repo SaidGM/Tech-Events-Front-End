@@ -28,6 +28,16 @@ const EventsServices = {
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },
+    registerByData(data) {
+        return axios.post(url + `/auth/register`, data)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
+    loginByData(data) {
+        return axios.post(url + `/auth/authenticate`, data)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
 }
 
 export default EventsServices
