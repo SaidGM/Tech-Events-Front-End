@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.formAdd{
+    width: 90%;
+    margin: auto;
+}
+.containerFlex{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    gap: 2px;
+    padding-bottom: 5px;
+}
+.containerFlex input{
+    height: 30px;
+    border: 1px solid #152731;
+    border-radius: 10px;
+    padding-left: 2px;
+}
+.containerFlex label{
+    font-weight: 600;
+    padding-left: 3px;
+}
+.buttonAddEvent{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonAddEvent button{
+    font-weight: 600;
+    font-size: 1em;
+    padding: 6px 10px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: #152731;
+}
+.select{
+    color: #152731;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #152731;
+    font-size: 0.9em;
+    font-weight: 500;
+}

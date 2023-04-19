@@ -3,3 +3,116 @@
     padding: 0;
     box-sizing: border-box;
 }
+.mainHomeAdmin{
+    position: relative;
+    height: max-content;
+    width: 100%;
+    color: #152731
+}
+.adminBackground{
+    position: relative;
+    height: 150px;
+    width: 100%;
+    border-radius: 60px 0 0 0;
+    background-color: #D9D9D9;
+}
+.mainPageAdmin{
+    margin-top: 10px;
+    background-color: #F8F8F8;
+    position: absolute;
+    height: max-content;
+    width: 100%;
+    border-radius: 50px 0 0 0;
+    padding-top: 35px;
+    padding-bottom: 30px;
+}
+.titleAdmin h1{
+    font-size: 1.4em;
+    margin-left: 20px;
+}
+.titleAdmin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+.addEvent{
+    font-weight: 500;
+    color: white;
+    background-color: #152731;
+    border: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+.dashBoardRow{
+    display: grid;
+    grid-template-columns: 110px repeat(2, 1fr) repeat(2, 27px);
+    height: 45px;
+    padding: 0 5px;
+    align-items: center;
+    background-color: rgb(189, 189, 189);
+    width: 90%;
+    margin: auto;
+}
+.dashBoardRow:nth-child(even) {
+    background-color: rgb(223, 223, 223);
+}
+.eventCapacity{
+    text-align: center;
+}
+
+.itemsNone{
+    display: none;
+}
+
+.line-clap{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.titles{
+    display: flex;
+    margin: auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+.pTitles{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+
+@media (min-width: 1100px){
+    .dashBoardRow{
+        grid-template-columns: 150px repeat(6, 155px) repeat(2, 30px);
+        text-align: center;
+    }
+    .itemsNone{
+        display: block;
+    }
+    .nivelForm{
+        text-align: center;
+    }
+    .titles{
+        display: grid;
+        grid-template-columns: 150px repeat(6, 155px) repeat(2, 30px);
+        text-align: center;
+    }  
+}
+@media (min-width: 1600px){
+    .dashBoardRow{
+        grid-template-columns: 250px 170px 250px 190px 230px 190px 240px 30px 30px;
+        text-align: center;
+    }
+    .editEvent{
+    margin-left: 100px;
+    }
+    .deleteEvent{
+    margin-left: 120px;
+    }
+}

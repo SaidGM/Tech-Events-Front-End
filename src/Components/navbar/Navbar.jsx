@@ -1,11 +1,21 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Navbar.css"
-// import { Icon } from '@iconify/react';
-import { serviceApi } from '../../Api/serviceApi'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const user = JSON.parse(localStorage.getItem("auth"));
+  const role = localStorage.getItem("auth_role");
+  
+  const logout = () => {
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("auth_email");
+    localStorage.removeItem("auth_role");
+    localStorage.removeItem("auth");
+    window.location = "/login";
+    document.location.reload();
+  };
+  
   return (
     <header>
       <Link to={'/'} className='brandA'>
@@ -13,10 +23,25 @@ function Navbar() {
       </Link>
       <nav>
         <ul>
+          <li>
+            {role === "ADMIN"
+              ? <Link to={"/admin"}>Administrador</Link>
+              : ""
+            }
+          </li>
           <li><Link to={"/"}>Home</Link></li>
-          <li><Link to={"/admin"}>Administrador</Link></li>
-          <li id="login"><Link to={"/login"} >Login</Link></li>
-          <li id="signup"><Link to={"/register"}>Register</Link></li>
+          <li id="login">
+            {user 
+             ? <Link onClick={logout} >Log Out</Link>
+             : <Link to={"/login"} >Log In</Link>
+            }
+          </li>
+          <li id="signup">
+            {user 
+             ? ''
+             : <Link to={"/register"}>Register</Link>
+            }
+          </li>
         </ul>
       </nav>
       <div className={`hamburger-icon ${isOpen && "open"}`}
@@ -26,9 +51,24 @@ function Navbar() {
         <div className="bar3" ></div>
         <ul className="mobile-menu">
           <li className='liNavbar'><Link to="/">Home</Link></li>
-          <li className='liNavbar'><Link to="/">Administrador</Link></li>
-          <li  className='liNavbar'id="login"><Link to={"/login"} >Login</Link></li>
-          <li  className='liNavbar'id="signup"><Link to={"/register"}>Register</Link></li>
+          <li  className='liNavbar'id="login">
+          {user 
+             ? <Link onClick={logout} >Log Out</Link>
+             : <Link to={"/login"} >Log In</Link>
+          }
+          </li>
+            {user 
+              ? ''
+              : <li  className='liNavbar'id="signup">
+                <Link to={"/register"}>Register</Link>
+                </li>
+              }
+            {role === "ADMIN"
+              ? <li className='liNavbar'>
+                <Link to={"/admin"}>Administrador</Link>
+                </li>
+              : <></>
+            }
         </ul>
       </div>
     </header>
