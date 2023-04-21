@@ -18,7 +18,7 @@ function LogIn() {
     const [login, setLogin] = useState(initialLogin);
     let navigate = useNavigate();
 
-    const handleInput = (e) => {
+    const onChangeInput = (e) => {
     e.persist();
     setLogin({
         ...login,
@@ -61,12 +61,12 @@ function LogIn() {
                       <form action="" name="Form" onSubmit={loginSubmit} className='formLogIn' >
                           <h2 className='htmlFor'>Login</h2>
                           <div className="inputbox">
-                              <input onChange={handleInput} id="user-email" name='email' type="email" required onKeyUp={validateEmail} />
+                              <input onChange={onChangeInput} id="user-email" name='email' type="email" required onKeyUp={validateEmail} />
                               <label htmlFor="">Email</label>
                           </div>
                           <span id="error-msg"></span>
                           <div className="inputbox">
-                              <input onChange={handleInput} name='password' type="password" required onKeyUp={validatePass} maxLength="30"></input>
+                              <input onChange={onChangeInput} name='password' type="password" required onKeyUp={validatePass} maxLength="30"></input>
                               <label htmlFor="">Password</label>
                           </div>
                           <span id="error-password"></span>
