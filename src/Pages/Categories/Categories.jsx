@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Categories.css'
-// import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import ContainerEvents from '../../Components/containerEvents/ContainerEvents'
 import Footer from '../../Components/footer/Footer'
-// import Article from '../../Components/sectionArticle/Article'
+import Article from '../../Components/sectionArticle/Article'
+import EventsServices from '../../Api/eventsServices'
 
 function Categories() {
     
-    // const [events, setEvent] = useState([])
-    // const {id} = useParams()
+    const [events, setEvent] = useState([])
+    const {id} = useParams()
 
-    // useEffect(()=>{
-    //     EventsServices.categoryById(id)
-    //     .then((data)=>{setEvent(data)})
-    //   },[])
+    useEffect(()=>{
+        EventsServices.categoryById(id)
+        .then((data)=>{setEvent(data)})
+      },[])
       
   return (
     <>
@@ -27,7 +28,7 @@ function Categories() {
               <h4 className='h4Categorie'>Lista completa de todos los eventos</h4>
             </div>
             <section className='sectionEventCategorie' >
-              {/* {events.map((i) => {
+              {events.map((i) => {
                 if (i.active) {
                   return (
                     <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfoCategorie'>
@@ -44,8 +45,8 @@ function Categories() {
                   )
                 }
                 return null
-              })} */}
-              {/* {events.map((i) => {
+              })}
+              {events.map((i) => {
                 if (!i.active) {
                   return (
                     <Link to={`/infoEvent/${i.id}`} key={i.id} className='linkInfo'>
@@ -62,7 +63,7 @@ function Categories() {
                   )
                 }
                 return null
-              })} */}
+              })}
             </section>
           </div>
           <Footer />
