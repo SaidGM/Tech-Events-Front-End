@@ -4,10 +4,11 @@ import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import { useState } from 'react';
 import EventsServices from '../../Api/eventsServices';
 import Footer from '../../Components/footer/Footer';
+import { Link } from 'react-router-dom';
 
 function Admin() {
   const [events, setEvents] = useState([])
-  // console.log(events);
+  console.log(events);
 
   useEffect(()=>{
     EventsServices.allEvents()
@@ -23,6 +24,7 @@ function Admin() {
         .then(document.location.reload())
         .catch((error) => {
           console.log(error);
+          alert("Usuario no reconocido!")
         });
     }
   };
@@ -33,7 +35,9 @@ function Admin() {
         <div className='adminBackground'>
           <div className='titleAdmin'>
             <h1>Administrador</h1>
-            <button className='addEvent'>Añadir evento</button>
+            <Link to={'/adminAdd'}>
+              <button className='addEvent'>Añadir evento</button>
+            </Link>
           </div>
           <div className='mainPageAdmin'>
             <div className='titles'>

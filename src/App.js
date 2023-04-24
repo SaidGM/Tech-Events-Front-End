@@ -6,9 +6,9 @@ import Info from './Pages/Info/Info';
 import LogIn from './Pages/LogIn/LogIn';
 import Register from './Pages/Register/Register';
 import Admin from './Pages/Admin/Admin';
-import AddForm from './Pages/AddForm/AddForm';
 import RequireAuth from './Components/requireAuth/RequireAuth';
 import Categories from './Pages/Categories/Categories';
+import AddForm from './Pages/AddForm/AddForm';
 
 function App() {
   return (

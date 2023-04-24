@@ -32,7 +32,7 @@ function Navbar() {
           <li><Link to={"/"}>Home</Link></li>
           <li id="login">
             {user 
-             ? <Link onClick={logout} >Log Out</Link>
+             ? <Link onClick={logout} to={'/login'} >Log Out</Link>
              : <Link to={"/login"} >Log In</Link>
             }
           </li>

@@ -39,6 +39,9 @@
     border-radius: 10px;
     padding-left: 2px;
 }
+.containerFlex select{
+    font-family: 'Poppins', sans-serif;
+}
 .containerFlex label{
     font-weight: 600;
     padding-left: 3px;
@@ -67,12 +70,12 @@
     font-size: 0.9em;
     font-weight: 500;
 }
-.containerFlex #inputDes{
+/* .containerFlex #inputDes{
     height: 110px;
 }
 .containerFlex #imageUrl{
     height: 120px;
-}
+} */
 .containerForm{
     width: 100%;
     display: flex;

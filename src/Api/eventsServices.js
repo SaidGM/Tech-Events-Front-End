@@ -20,10 +20,10 @@ const EventsServices = {
     deleteByIdEvent(id) {
         return axios.delete(url + `/${id}`, config)
         .then((response) => {
-          console.log('Recurso eliminado correctamente');
+          console.log(response);
         })
         .catch((error) => {
-          console.error('Hubo un error al eliminar el recurso', error);
+          console.error(error);
         });
     },
     allEventsHighlight() {
@@ -48,6 +48,11 @@ const EventsServices = {
     },
     loginByData(data) {
         return axios.post(url + `/auth/authenticate`, data)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
+    eventPost(data) {
+        return axios.post(url, data, config)
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },
