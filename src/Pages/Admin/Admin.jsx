@@ -7,11 +7,25 @@ import Footer from '../../Components/footer/Footer';
 
 function Admin() {
   const [events, setEvents] = useState([])
-  console.log(events);
+  // console.log(events);
+
   useEffect(()=>{
     EventsServices.allEvents()
     .then((data)=>{setEvents(data)})
   },[])
+
+  const handleDelete = (id) => {
+    let isDelete = window.confirm(
+      `Quieres eliminar el evento con id: ${id}?`
+    );
+    if (isDelete) {
+      EventsServices.deleteByIdEvent(id)
+        .then(document.location.reload())
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
 
   return (
     <>
@@ -33,7 +47,7 @@ function Admin() {
             </div>
             {events.map((events)=>{
               return(
-              <div className="dashBoardRow" >
+              <div className="dashBoardRow" key={events.id}>
                 <p className="eventTitle line-clap">{events.title}</p>
                 <p className="eventNivel line-clap">{events.degree}</p>
                 <p className="eventCapacity  line-clap">{events.capacity}</p>
@@ -46,8 +60,8 @@ function Admin() {
                     : "No"
                   }
                   </p>
-                <FaPencilAlt className='editEvent'/>
-                <FaTrashAlt className='deleteEvent'/>
+                <FaPencilAlt className='editEvent' />
+                <FaTrashAlt className='deleteEvent' onClick={() => handleDelete(events.id)}/>
               </div>
 
               )})

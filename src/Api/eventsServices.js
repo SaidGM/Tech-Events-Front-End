@@ -1,6 +1,10 @@
 import axios from 'axios'
 
 const url = 'http://localhost:8080/events'
+const token = localStorage.getItem("auth_token")
+const config = {
+    headers: { Authorization: `Bearer ${token}` }
+};
 
 const EventsServices = {
     allEvents() {
@@ -12,6 +16,15 @@ const EventsServices = {
         return axios.get(url + `/${id}`)
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
+    },
+    deleteByIdEvent(id) {
+        return axios.delete(url + `/${id}`, config)
+        .then((response) => {
+          console.log('Recurso eliminado correctamente');
+        })
+        .catch((error) => {
+          console.error('Hubo un error al eliminar el recurso', error);
+        });
     },
     allEventsHighlight() {
         return axios.get(url + `/highlight`)

@@ -56,7 +56,7 @@ export const serviceApi = () => {
     localStorage.removeItem("auth_email");
     localStorage.removeItem("auth");
 
-    window.location = "/crud-api-login";
+    window.location = "/";
   };
 
   return {

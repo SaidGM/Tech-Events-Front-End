@@ -15,7 +15,7 @@ function App() {
     <>
       <Navbar/>
       <Routes>
-        {/* <Route path='/login' element={<LogIn/>}/> 
+        <Route path='/login' element={<LogIn/>}/> 
         <Route path='/register' element={<Register/>}/> 
         <Route path='/' element={<Home/>}/> 
         <Route path='/categorie/:id' element={<Categories/>}/>
@@ -25,8 +25,8 @@ function App() {
           <RequireAuth>
             <Admin/>
           </RequireAuth>
-        }/> */}
-        <Route path='/' element={<AddForm/>}/>
+        }/>
+        <Route path='/adminAdd' element={<AddForm/>}/>
       </Routes>
     </> 
   ); 
