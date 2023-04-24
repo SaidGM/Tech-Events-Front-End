@@ -4,13 +4,33 @@
     box-sizing: border-box;
 }
 .formAdd{
-    width: 90%;
+    border-radius: 50px 50px 0 0;
+    padding-top: 30px;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     margin: auto;
+}
+.containerFormOne{
+    width: 85%;
+}
+.containerFormTwo{
+    width: 85%;
+}
+.titleFormAdd{
+    width: 85%;
+}
+.titleFormAdd h3{
+    font-size: 1.4em;
+    text-align: start;
+    padding-bottom: 10px;
 }
 .containerFlex{
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     gap: 2px;
     padding-bottom: 5px;
 }
@@ -47,4 +67,10 @@
     border: 1px solid #152731;
     font-size: 0.9em;
     font-weight: 500;
+}
+.containerFlex #inputDes{
+    height: 110px;
+}
+.containerFlex #imageUrl{
+    height: 120px;
 }

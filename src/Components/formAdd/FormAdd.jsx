@@ -9,6 +9,9 @@ function FormAdd() {
 
   return (
     <form className='formAdd'>
+        <div className='titleFormAdd'>
+            <h3>Crear nuevo Evento</h3>
+        </div>
       <div className='containerFormOne'>
         <div className='containerFlex'>
             <label htmlFor="">Titulo del evento:</label>
@@ -30,7 +33,7 @@ function FormAdd() {
       <div className='containerFormTwo'>
         <div className='containerFlex'>
             <label htmlFor="">Descripción:</label>
-            <input type="text" name=''/>
+            <input type="text" name='' id='inputDes'/>
         </div>
         <div className='containerFlex'>
             <label htmlFor="">Fecha del evento:</label>
@@ -50,7 +53,7 @@ function FormAdd() {
         </div>
         <div className='containerFlex containerFile'>          
             <label htmlFor="">Url de la imagen:</label>
-            <input type="file" name=''/>
+            <input type="text" name='' id='imageUrl'/>
         </div>
         <div className='buttonAddEvent'>
             <button type='submit'>Añadir Evento</button>

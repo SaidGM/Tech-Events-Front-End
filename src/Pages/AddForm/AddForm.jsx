@@ -1,7 +1,7 @@
 import React from 'react'
 import './AddForm.css'
 import FormAdd from '../../Components/formAdd/FormAdd'
-// import Footer from '../../Components/footer/Footer'
+import Footer from '../../Components/footer/Footer'
 
 function AddForm() {
   return (
@@ -10,14 +10,13 @@ function AddForm() {
         <div className='addBackground'>
           <div className='titleAdd'>
             <h1>Administrador</h1>
-            <button className='addEvent'>Añadir evento</button>
           </div>
           <div className='mainPageAdd'>
-            <FormAdd/>
+              <FormAdd/>
+              <Footer/>
           </div>
         </div>
       </main>
-            {/* <Footer/> */}
     </>
   )
 }

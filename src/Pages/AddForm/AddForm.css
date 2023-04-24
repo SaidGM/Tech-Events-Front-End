@@ -18,12 +18,12 @@
 }
 .mainPageAdd{
     margin-top: 10px;
-    background-color: #F8F8F8;
+    background-color: #FFFF;
     position: absolute;
     height: max-content;
     width: 100%;
-    border-radius: 50px 0 0 0;
-    padding-top: 35px;
+    border-radius: 50px 50px 0 0;
+    padding-top: 50px;
     padding-bottom: 30px;
 }
 .titleAdd h1{
