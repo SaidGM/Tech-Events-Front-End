@@ -13,10 +13,10 @@ function FormAdd({id}) {
             degree: '',
             highlight: '',
             description: '',
-            eventDate: '',
+            eventDate: '2023-05-10',
             eventTime: '',
             categoryId: '',
-            urlImage: ''
+            urlImage: 'https://1.bp.blogspot.com/-jw-FAFL2t-w/XrGCai-oyVI/AAAAAAAACOo/C46oP8cf7WcmrzAdhEteptt3Gbvt9xd3wCLcBGAsYHQ/s1600/maxresdefault.jpg'
         }
     })
 
@@ -81,7 +81,7 @@ function FormAdd({id}) {
                           <option value="Intermediate">Intermediate</option>
                           <option value="Advanced">Advanced</option>
                       </select>
-                      {errors.description?.type === "required" && <p>El campo es requerido</p>}
+                      {errors.degree?.type === "required" && <p>El campo es requerido</p>}
                   </div>
                   <div className='containerFlex'>
                       <label htmlFor="">Destacado:</label>
@@ -93,7 +93,7 @@ function FormAdd({id}) {
                           <option value="true"> Si </option>
                           <option value="false"> No </option>
                       </select>
-                      {errors.description?.type === "required" && <p>El campo es requerido</p>}
+                      {errors.highlight?.type === "required" && <p>El campo es requerido</p>}
                   </div>
                   <div className='containerFlex'>
                       <label htmlFor="">Descripción:</label>
@@ -151,6 +151,7 @@ function FormAdd({id}) {
                           id='imageUrl'
                           {...register('urlImage', { required: true })} />
                       {errors.urlImage?.type === "required" && <p>El campo es requerido</p>}
+                      <h6>Recomendacion: 1280 x 720</h6>
                   </div>
                   <div className='buttonAddEvent containerFlex'>
                       <button type='submit'>Añadir Evento</button>
@@ -162,7 +163,14 @@ function FormAdd({id}) {
                   <h3>Previsualización</h3>
               </div>
               <div className='containerPreviewArticle'>
-                  <Article />
+                  <Article 
+                  active= "true"
+                  date={`${watch('eventDate')} | ${watch('eventTime')}`}
+                  capacity={watch('capacity')}
+                  titleArticle={watch('title')}
+                  img={watch('urlImage')}
+                  inscribedUsersCount= '0'
+                  />
               </div>
           </div>
       </form>
