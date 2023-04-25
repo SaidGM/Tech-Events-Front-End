@@ -38,6 +38,7 @@ function FormAdd() {
             })
         }
     },[])
+    
     const id = localStorage.getItem("id")
     console.log(id);
 
@@ -45,8 +46,9 @@ function FormAdd() {
         e.preventDefault();
         if (id) { 
             EventsServices.eventPut(id, data)
-            // .then(navigation('/admin'))
-            // .then(window.location.reload)
+            .then(navigation('/admin'))
+            .then(window.location.reload)
+            .then(localStorage.removeItem("id"))
             .catch((error) => {console.log(error)})
         } else { 
             EventsServices.eventPost(data)

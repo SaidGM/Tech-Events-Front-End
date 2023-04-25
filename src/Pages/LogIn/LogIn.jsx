@@ -48,6 +48,7 @@ function LogIn() {
                 navigate("/");
                 document.location.reload();
             })
+            .then((res)=>{console.log(res)})
             .catch((err) =>
                 console.error(err)
             )
