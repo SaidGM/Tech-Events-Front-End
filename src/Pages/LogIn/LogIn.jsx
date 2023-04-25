@@ -51,7 +51,7 @@ function LogIn() {
             .catch((err) =>
                 console.error(err)
             )
-    };
+    }
 
   return (
       <>

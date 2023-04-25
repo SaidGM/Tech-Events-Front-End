@@ -33,7 +33,7 @@ function Info() {
                    <h3 className='hTitle'>{eventInfo.title}</h3>
                    <h5 className='hAsistentes'>{eventInfo.inscribedUsersCount} / {eventInfo.capacity} asistentes</h5>
                 </div>
-                <div className='containerFlex'>
+                <div className='containerFlexInfo'>
                     <div className='containerInfo'>
                         <h2>Info</h2>
                         <h4 className='hInfo'>{eventInfo.description}</h4>

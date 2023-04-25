@@ -91,12 +91,12 @@
     margin-top: 20px;
     border: none;
 }
-.containerFlex{
+.containerFlexInfo{
     background-color: #F8F8F8;
 }
 
 @media (min-width: 1100px){
-    .containerFlex{
+    .containerFlexInfo{
         display: flex;
         border-radius: 50px 50px 0 0;
         margin-top: 20px;

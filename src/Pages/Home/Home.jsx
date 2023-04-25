@@ -41,6 +41,7 @@ function Home() {
                           capacity={i.capacity}
                           titleArticle={i.title}
                           img={i.urlImage}
+                          inscribedUsersCount={i.inscribedUsersCount}
                         />
                       </Link>
                     )
@@ -65,6 +66,7 @@ function Home() {
                           capacity={i.capacity}
                           titleArticle={i.title}
                           img={i.urlImage}
+                          inscribedUsersCount={i.inscribedUsersCount}
                         />
                       </Link>
                     )
@@ -83,6 +85,7 @@ function Home() {
                           capacity={i.capacity}
                           titleArticle={i.title}
                           img={i.urlImage}
+                          inscribedUsersCount={i.inscribedUsersCount}
                         />
                       </Link>
                     )

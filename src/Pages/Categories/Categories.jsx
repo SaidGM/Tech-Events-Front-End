@@ -40,6 +40,7 @@ function Categories() {
                         capacity={i.capacity}
                         titleArticle={i.title}
                         img={i.urlImage}
+                        inscribedUsersCount={i.inscribedUsersCount}
                       />
                     </Link>
                   )
@@ -58,6 +59,7 @@ function Categories() {
                         capacity={i.capacity}
                         titleArticle={i.title}
                         img={i.urlImage}
+                        inscribedUsersCount={i.inscribedUsersCount}
                       />
                     </Link>
                   )

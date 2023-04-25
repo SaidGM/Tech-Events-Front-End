@@ -16,22 +16,21 @@ function Register() {
 
   const [register, setRegister] = useState(initialRegister);
   const navigate = useNavigate() 
-    const onChangeInput = e => {
-      e.persist();
-      setRegister({...register,[e.target.name]: e.target.value});
-    }
+  const onChangeInput = e => {
+    e.persist();
+    setRegister({...register,[e.target.name]: e.target.value});
+  }
 
-    const registerSubmit = (e) => {
-      e.preventDefault();
-      const data = {
-          name: register.name,
-          email: register.email,
-          password: register.password
-      }
-
-      EventsServices.registerByData(data);
-      navigate("/login")
+  const registerSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+        name: register.name,
+        email: register.email,
+        password: register.password
     }
+    EventsServices.registerByData(data);
+    navigate("/login")
+  }
 
   
   return (
