@@ -4,7 +4,7 @@ import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import { useState } from 'react';
 import EventsServices from '../../Api/eventsServices';
 import Footer from '../../Components/footer/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Admin() {
   const [events, setEvents] = useState([])
@@ -28,6 +28,11 @@ function Admin() {
         });
     }
   };
+  const navigate = useNavigate()
+  const handleChange = (id) => {
+    localStorage.setItem("id", id);
+    navigate('/adminAdd')
+    };
 
   return (
     <>
@@ -64,7 +69,7 @@ function Admin() {
                     : "No"
                   }
                   </p>
-                <FaPencilAlt className='editEvent' />
+                <FaPencilAlt className='editEvent' onClick={() => handleChange(events.id)}/>
                 <FaTrashAlt className='deleteEvent' onClick={() => handleDelete(events.id)}/>
               </div>
 

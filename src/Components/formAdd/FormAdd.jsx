@@ -5,7 +5,7 @@ import EventsServices from '../../Api/eventsServices';
 import Article from '../sectionArticle/Article';
 import { useNavigate } from 'react-router-dom';
 
-function FormAdd({id}) {
+function FormAdd() {
 
     const {register, formState:{errors},setValue, watch , handleSubmit} = useForm({
         defaultValues:{
@@ -38,11 +38,16 @@ function FormAdd({id}) {
             })
         }
     },[])
+    const id = localStorage.getItem("id")
+    console.log(id);
 
     const onSubmit = (data, e) => {
         e.preventDefault();
         if (id) { 
-            console.log('Hola');
+            EventsServices.eventPut(id, data)
+            // .then(navigation('/admin'))
+            // .then(window.location.reload)
+            .catch((error) => {console.log(error)})
         } else { 
             EventsServices.eventPost(data)
             .then(navigation('/admin'))

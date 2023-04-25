@@ -12,7 +12,7 @@ function Navbar() {
     localStorage.removeItem("auth_email");
     localStorage.removeItem("auth_role");
     localStorage.removeItem("auth");
-    window.location = "/login";
+    window.location = "/";
     document.location.reload();
   };
   
@@ -32,7 +32,7 @@ function Navbar() {
           <li><Link to={"/"}>Home</Link></li>
           <li id="login">
             {user 
-             ? <Link onClick={logout} to={'/'} >Log Out</Link>
+             ? <Link onClick={logout}>Log Out</Link>
              : <Link to={"/login"} >Log In</Link>
             }
           </li>
@@ -53,7 +53,7 @@ function Navbar() {
           <li className='liNavbar'><Link to="/">Home</Link></li>
           <li  className='liNavbar'id="login">
           {user 
-             ? <Link onClick={logout} to={'/'} >Log Out</Link>
+             ? <Link onClick={logout}>Log Out</Link>
              : <Link to={"/login"} >Log In</Link>
           }
           </li>

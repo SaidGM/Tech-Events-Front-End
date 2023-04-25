@@ -64,6 +64,15 @@ const EventsServices = {
             console.error('Evento no Creado:', error);
         });
     },
+    eventPut(id, data) {
+        return axios.put(url + `/${id}`, data, config)
+        .then((response) => {
+            console.log('Evento Editado:', response.data);
+        })
+        .catch((error) => {
+            console.error('Evento no Editado:', error);
+        });
+    },
     inscribedEvent(id) {
         return axios.post(url + `/${id}/inscribed`, data, config)
         .then((response) => {
