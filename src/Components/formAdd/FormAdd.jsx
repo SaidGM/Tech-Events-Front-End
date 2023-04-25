@@ -2,6 +2,8 @@ import React, { useEffect} from 'react'
 import './FormAdd.css'
 import { useForm } from 'react-hook-form';
 import EventsServices from '../../Api/eventsServices';
+import Article from '../sectionArticle/Article';
+import { useNavigate } from 'react-router-dom';
 
 function FormAdd({id}) {
 
@@ -13,12 +15,12 @@ function FormAdd({id}) {
             description: '',
             eventDate: '',
             eventTime: '',
-            category: {
-                id:''
-            },
+            categoryId: '',
             urlImage: ''
         }
     })
+
+    const navigation = useNavigate()
 
     useEffect(()=>{
         if (id) {
@@ -30,19 +32,23 @@ function FormAdd({id}) {
                 setValue('description', data.description)
                 setValue('eventDate', data.eventDate)
                 setValue('eventTime', data.eventTime)
-                setValue('category.id', data.category.id)
+                setValue('categoryId', data.category.id)
+                setValue('capacity', data.capacity)
                 setValue('urlImage', data.urlImage)
             })
         }
     },[])
 
     const onSubmit = (data, e) => {
-        // e.preventDefault();
-        // if (id) { 
-        //     console.log('Hola');
-        // } else { 
-        //     EventsServices.eventPost(data)
-        // }
+        e.preventDefault();
+        if (id) { 
+            console.log('Hola');
+        } else { 
+            EventsServices.eventPost(data)
+            .then(navigation('/admin'))
+            .then(window.location.reload)
+            .catch((error) => {console.log(error)})
+        }
         console.log(data);
     }
 
@@ -59,8 +65,10 @@ function FormAdd({id}) {
                   <input 
                     name='title'
                     type="text"
-                    {...register('title', {required: true})}/>
-                  {errors.title?.type === "required" && <p>El campo es requerido</p>}
+                    {...register('title', {
+                        required: true,
+                        })}/>
+                  {errors.title?.type === "required" && <p>El campo es demasiado largo</p>}
               </div>
               <div className='containerFlex'>
                   <label htmlFor="">Nivel:</label>
@@ -68,11 +76,12 @@ function FormAdd({id}) {
                     name="degree" 
                     id="" 
                     className='select' 
-                    {...register('degree')}>
+                    {...register('degree', {required: true})}>
                       <option value="Beginner">Beginner</option>
                       <option value="Intermediate">Intermediate</option>
                       <option value="Advanced">Advanced</option>
                   </select>
+                  {errors.description?.type === "required" && <p>El campo es requerido</p>}
               </div>
               <div className='containerFlex'>
                   <label htmlFor="">Destacado:</label>
@@ -80,10 +89,11 @@ function FormAdd({id}) {
                      name="highlight" 
                      id="" 
                      className='select' 
-                     {...register('highlight')}>
+                     {...register('highlight', {required: true})}>
                       <option value="true"> Si </option>
                       <option value="false"> No </option>
                   </select>
+                  {errors.description?.type === "required" && <p>El campo es requerido</p>}
               </div>
           </div>
           <div className='containerFormTwo'>
@@ -107,21 +117,31 @@ function FormAdd({id}) {
               <div className='containerFlex'>
                   <label htmlFor="">Hora del evento:</label>
                   <input 
-                  type="text" 
+                  type="time" 
                   placeholder='08:30:00' 
                   {...register('eventTime', {required: true})}/>
-                  {errors.eventTime?.type === "required" && <p>El campo es requerido</p>}
+                  {errors.eventTime?.type === "required" && <p>El campo es requerido usa el ejemplo</p>}
               </div>
               <div className='containerFlex'>
                   <label htmlFor="">Categoria:</label>
                   <select 
-                  name="" id="" 
+                  name="" 
+                  id="" 
                   className='select' 
-                  {...register('category.id')}>
+                  {...register('categoryId', {required: true})}>
                       <option value="1">Workshop</option>
                       <option value="2">Webinar</option>
                       <option value="3">Masterclass</option>
                   </select>
+                  {errors.capacity?.type === "required" && <p>El campo es requerido</p>}
+              </div>
+              <div className='containerFlex containerFile'>
+                  <label htmlFor="">Capacidad:</label>
+                  <input 
+                  type="text" 
+                  name='' 
+                  {...register('capacity', {required: true})}/>
+                  {errors.capacity?.type === "required" && <p>El campo es requerido</p>}
               </div>
               <div className='containerFlex containerFile'>
                   <label htmlFor="">Url de la imagen:</label>
@@ -142,7 +162,7 @@ function FormAdd({id}) {
                 <h3>Previsualización</h3>
             </div>
             <div className='containerPreviewArticle'>
-                
+                <Article/>
             </div>
         </div>
       </form>

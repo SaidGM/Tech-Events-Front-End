@@ -1,9 +1,13 @@
 import axios from 'axios'
 
 const url = 'http://localhost:8080/events'
-const token = localStorage.getItem("auth_token")
+const token = localStorage.getItem("auth_token");
+const email = localStorage.getItem("auth_email");
 const config = {
     headers: { Authorization: `Bearer ${token}` }
+};
+const data = {
+    email: {email}
 };
 
 const EventsServices = {
@@ -53,9 +57,23 @@ const EventsServices = {
     },
     eventPost(data) {
         return axios.post(url, data, config)
-            .then((res)=>res.data)
-            .catch((err)=>console.log(err))
+        .then((response) => {
+            console.log('Evento Creado:', response.data);
+        })
+        .catch((error) => {
+            console.error('Evento no Creado:', error);
+        });
     },
+    inscribedEvent(id) {
+        return axios.post(url + `/${id}/inscribed`, data, config)
+        .then((response) => {
+            console.log('Inscrito:', response.data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+    
 }
 
 export default EventsServices

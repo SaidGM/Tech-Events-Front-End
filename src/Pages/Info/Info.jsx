@@ -15,6 +15,13 @@ function Info() {
     .then((data)=>{setEventInfo(data)})
   },[])
 
+  const handleInscribed = (id) =>{
+    EventsServices.inscribedEvent(id)
+    .then((res) => {console.log(res)})
+    .then(document.location.reload())
+    .catch((error) => {console.log(error);});
+  }
+
   return (
     <>
       <main className='mainInfo'>
@@ -24,7 +31,7 @@ function Info() {
                 <div className='containerTitle'>
                    <h4 className='hDate'>{eventInfo.eventDate} | {eventInfo.eventTime}</h4>
                    <h3 className='hTitle'>{eventInfo.title}</h3>
-                   <h5 className='hAsistentes'>15 / {eventInfo.capacity} asistentes</h5>
+                   <h5 className='hAsistentes'>{eventInfo.inscribedUsersCount} / {eventInfo.capacity} asistentes</h5>
                 </div>
                 <div className='containerFlex'>
                     <div className='containerInfo'>
@@ -46,7 +53,7 @@ function Info() {
                               {eventInfo.degree}
                             </h3>
                         </div>
-                        <button className='ButtonApunt'>Apúntate</button>
+                        <button className='ButtonApunt' onClick={() => handleInscribed(id)}>Apúntate</button>
                     </div>
                 </div>
                 <Footer/>
