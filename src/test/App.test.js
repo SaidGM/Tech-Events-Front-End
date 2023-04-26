@@ -1,7 +1,7 @@
+import { render, screen } from '@testing-library/react';
 import App from '../App'
-import { render, screen } from '@testing-library/react'
 
-describe('', () => {
+describe('eventCode', () => {
     beforeEach(()=> render(<App/>))
     test('renders main page correctly', () => {
         screen.debug();
