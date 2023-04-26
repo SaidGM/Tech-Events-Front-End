@@ -46,14 +46,12 @@ function FormAdd() {
         e.preventDefault();
         if (id) { 
             EventsServices.eventPut(id, data)
-            .then(navigation('/admin'))
-            .then(window.location.reload)
+            .then(navigation('/'))
             .then(localStorage.removeItem("id"))
             .catch((error) => {console.log(error)})
         } else { 
             EventsServices.eventPost(data)
-            .then(navigation('/admin'))
-            // .then(window.location.reload)
+            .then(navigation('/'))
             .catch((error) => {console.log(error)})
         }
         console.log(data);

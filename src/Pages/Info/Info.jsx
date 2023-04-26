@@ -9,19 +9,25 @@ function Info() {
 
   const [eventInfo, setEventInfo] = useState([])
   const {id} = useParams()
-  console.log(id);
+  const itemToken = localStorage.getItem("auth_token");
 
   useEffect(()=>{
-    EventsServices.byIdEvents(id)
-    .then((data)=>{setEventInfo(data)})
+      if (!itemToken) {
+        EventsServices.byIdEvents(id)
+        .then((data)=>{setEventInfo(data)})
+      } else {
+        EventsServices.byIdEventsToken(id)
+        .then((data)=>{setEventInfo(data)})
+      }
   },[])
 
   const handleInscribed = (id) =>{
     EventsServices.inscribedEvent(id)
     .then((res) => {console.log(res)})
-    // .then(document.location.reload())
+    .then(window.location.reload())
     .catch((error) => {console.log(error);});
   }
+
 
   return (
     <>
@@ -54,7 +60,10 @@ function Info() {
                               {eventInfo.degree}
                             </h3>
                         </div>
-                        <button className='ButtonApunt' onClick={() => handleInscribed(id)}>Apúntate</button>
+                        {eventInfo.isInscribedUser === true
+                          ? <button className='ButtonApunt'>Inscrito</button>
+                          : <button className='ButtonApunt' onClick={() => handleInscribed(id)}>Apúntate</button>
+                        }
                     </div>
                 </div>
                 <Footer/>

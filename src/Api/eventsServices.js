@@ -21,6 +21,11 @@ const EventsServices = {
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },
+    byIdEventsToken(id) {
+        return axios.get(url + `/${id}`, config)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
     deleteByIdEvent(id) {
         return axios.delete(url + `/${id}`, config)
         .then((response) => {
