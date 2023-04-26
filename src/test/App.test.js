@@ -7,5 +7,4 @@ describe('', () => {
         screen.debug();
         espect(true).toBeTruthy()
     })
-    
 })
