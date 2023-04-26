@@ -29,12 +29,13 @@
     position: absolute;
     top: -105px;
     margin: auto;
-    object-fit: contain;
+    object-fit: cover;
 }
 .containerTitle{
     width: 92%;
     height: max-content;
-    margin-top: 100px ;
+    padding-top: 90px ;
+    padding-bottom: 10px;
 }
 .hDate{
     font-weight: 400;
@@ -93,6 +94,21 @@
 }
 .containerFlexInfo{
     background-color: #F8F8F8;
+    border-radius: 50px 50px 0 0;
+}
+@media (min-width: 800px){
+    .imgInfo{
+        width: 520px;
+        height: 270px;
+        border-radius: 30px;
+        position: absolute;
+        top: -105px;
+        margin: auto;
+        object-fit: cover;
+    }
+    .containerTitle{
+        margin-top: 80px ;
+    }
 }
 
 @media (min-width: 1100px){
@@ -123,7 +139,7 @@
         font-weight: 400;
     }
     .imgInfo{
-        object-fit: contain;
+        object-fit: cover;
         width: 60%;
         height: 51%;
         top: -260px;

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import "./Info.css"
 import Footer from '../../Components/footer/Footer'
 import EventsServices from '../../Api/eventsServices'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Icon } from '@iconify/react';
+import ButtonInscribed from '../../Components/buttonInscribed/ButtonInscribed'
 
 function Info() {
 
@@ -12,22 +13,14 @@ function Info() {
   const itemToken = localStorage.getItem("auth_token");
 
   useEffect(()=>{
-      if (!itemToken) {
-        EventsServices.byIdEvents(id)
-        .then((data)=>{setEventInfo(data)})
-      } else {
+      if (itemToken) {
         EventsServices.byIdEventsToken(id)
         .then((data)=>{setEventInfo(data)})
-      }
+      } else if (!itemToken) {
+        EventsServices.byIdEvents(id)
+        .then((data)=>{setEventInfo(data)})
+      } 
   },[])
-
-  const handleInscribed = (id) =>{
-    EventsServices.inscribedEvent(id)
-    .then((res) => {console.log(res)})
-    .then(window.location.reload())
-    .catch((error) => {console.log(error);});
-  }
-
 
   return (
     <>
@@ -60,9 +53,9 @@ function Info() {
                               {eventInfo.degree}
                             </h3>
                         </div>
-                        {eventInfo.isInscribedUser === true
-                          ? <button className='ButtonApunt'>Inscrito</button>
-                          : <button className='ButtonApunt' onClick={() => handleInscribed(id)}>Apúntate</button>
+                        {eventInfo.full === true
+                          ? <button className='ButtonApunt'>Evento Lleno</button>
+                          : <ButtonInscribed id={id} isInscribedUser={eventInfo.isInscribedUser}/>
                         }
                     </div>
                 </div>

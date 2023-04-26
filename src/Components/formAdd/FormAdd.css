@@ -116,6 +116,7 @@
     }
     .containerFormPreview{
         display: block;
+        height: max-content;
         width: 40%;
         position: relative;
         display: flex;
