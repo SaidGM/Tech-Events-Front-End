@@ -15,10 +15,10 @@ function ContainerEvents() {
   return (
       <div className='containerEvents'>
           <h4 className='events'>Eventos:</h4>
-        {categories.map((i)=>{
+        {categories.map((i, index)=>{
             return(
                 <Link key={i.id} to={`/categorie/${i.id}`}>
-                <button className='buttonStyle' key={i.id}>{i.name}</button>
+                <button className='buttonStyle' key={index}>{i.name}</button>
                 </Link>
             )
         })}

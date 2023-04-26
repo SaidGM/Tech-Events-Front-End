@@ -15,6 +15,8 @@ function Categories() {
         EventsServices.categoryById(id)
         .then((data)=>{setEvent(data)})
       },[])
+
+    
       
   return (
     <>
