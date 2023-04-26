@@ -9,6 +9,7 @@ function Info() {
 
   const [eventInfo, setEventInfo] = useState([])
   const {id} = useParams()
+  console.log(id);
 
   useEffect(()=>{
     EventsServices.byIdEvents(id)
@@ -18,7 +19,7 @@ function Info() {
   const handleInscribed = (id) =>{
     EventsServices.inscribedEvent(id)
     .then((res) => {console.log(res)})
-    .then(document.location.reload())
+    // .then(document.location.reload())
     .catch((error) => {console.log(error);});
   }
 

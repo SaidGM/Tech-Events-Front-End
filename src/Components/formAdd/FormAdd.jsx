@@ -53,7 +53,7 @@ function FormAdd() {
         } else { 
             EventsServices.eventPost(data)
             .then(navigation('/admin'))
-            .then(window.location.reload)
+            // .then(window.location.reload)
             .catch((error) => {console.log(error)})
         }
         console.log(data);
@@ -75,7 +75,7 @@ function FormAdd() {
                           {...register('title', {
                               required: true,
                           })} />
-                      {errors.title?.type === "required" && <p>El campo es demasiado largo</p>}
+                      {errors.title?.type === "required" && <p>El campo es requerido</p>}
                   </div>
                   <div className='containerFlex'>
                       <label htmlFor="">Nivel:</label>
@@ -140,7 +140,7 @@ function FormAdd() {
                           <option value="2">Webinar</option>
                           <option value="3">Masterclass</option>
                       </select>
-                      {errors.capacity?.type === "required" && <p>El campo es requerido</p>}
+                      {errors.categoryId?.type === "required" && <p>El campo es requerido</p>}
                   </div>
                   <div className='containerFlex containerFile'>
                       <label htmlFor="">Capacidad:</label>
