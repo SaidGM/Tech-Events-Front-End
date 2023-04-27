@@ -9,6 +9,5 @@ const RequireAuthAdmin = ({children, redirectTo="*"}) => {
         return children ? children : <Outlet/>
     }
         return <Navigate to={redirectTo}/>
-    };
-
+    }
 export default RequireAuthAdmin    

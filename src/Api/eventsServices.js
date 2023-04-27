@@ -91,6 +91,13 @@ const EventsServices = {
         .catch((error) => {
             console.error('Error:', error);
         });
+    },
+    myEvents() {
+        return axios.get(url + '/myEvents', config)
+        .then((res)=>res.data)
+        .catch((error) => {
+            console.error('Error:', error);
+        })
     }
     
 }
