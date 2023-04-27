@@ -9,9 +9,7 @@ function App() {
     <>
     <ErrorBoundary>
       <Navbar />
-      <Router>
-
-      </Router>
+      <Router/>
     </ErrorBoundary>
     </> 
   ); 
