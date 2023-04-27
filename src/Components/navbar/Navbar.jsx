@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Icon } from '@iconify/react';
 import "./Navbar.css"
 
 function Navbar() {
@@ -12,8 +13,7 @@ function Navbar() {
     localStorage.removeItem("auth_email");
     localStorage.removeItem("auth_role");
     localStorage.removeItem("auth");
-    window.location = "/";
-    document.location.reload();
+    window.location = "/login";
   };
   
   return (
@@ -23,56 +23,92 @@ function Navbar() {
       </Link>
       <nav>
         <ul>
-          <li>
-            {role === "ADMIN"
-              ? <Link to={"/admin"}>Administrador</Link>
-              : ""
-            }
+          {user
+            ?
+            <li className='home'>
+              <Icon icon="material-symbols:event-available" className='icons' />
+              <Link to={"/eventsUser"}>Mis eventos</Link>
+            </li>
+            : ''
+          }
+          {role === "ADMIN"
+            ? <li className='home'>
+              <Icon icon="eos-icons:admin" className='icons' />
+              <Link to={"/admin"}>Administrador</Link>
+            </li>
+            : ""
+          }
+          <li className='home'>
+            <Icon icon="material-symbols:home-app-logo" className='icons' />
+            <Link to={"/"}>Home</Link>
           </li>
-          <li><Link to={"/"}>Home</Link></li>
-          <li id="login">
-            {user 
-             ? <Link onClick={logout}>Log Out</Link>
-             : <Link to={"/login"} >Log In</Link>
-            }
-          </li>
-          <li id="signup">
-            {user 
-             ? ''
-             : <Link to={"/register"}>Register</Link>
-            }
-          </li>
+          {user
+            ?
+            <li className='home'>
+              <Icon icon="material-symbols:person-off" className='icons' />
+              <Link onClick={logout}>Log Out</Link>
+            </li>
+            :
+            <li className='home'>
+              <Icon icon="material-symbols:person-search" className='icons' />
+              <Link to={"/login"} >Log In</Link>
+            </li>
+          }
+
+          {user
+            ? ''
+            : <li className='home'>
+              <Icon icon="material-symbols:person-add" className='icons' />
+              <Link to={"/register"}>Register</Link>
+            </li>
+          }
+
         </ul>
       </nav>
       <div className={`hamburger-icon ${isOpen && "open"}`}
-           onClick={()=>{setIsOpen(!isOpen)}}>
+        onClick={() => { setIsOpen(!isOpen) }}>
         <div className="bar1" ></div>
         <div className="bar2" ></div>
         <div className="bar3" ></div>
         <ul className="mobile-menu">
-          <li className='liNavbar'><Link to="/">Home</Link></li>
-          <li  className='liNavbar'id="login">
-          {user 
-             ? <Link onClick={logout}>Log Out</Link>
-             : <Link to={"/login"} >Log In</Link>
-          }
+          <li className='liNavbar home'>
+            <Icon icon="material-symbols:home-app-logo" className='icons' />
+            <Link to="/">Home</Link>
           </li>
-            {user 
-              ? ''
-              : <li  className='liNavbar'id="signup">
-                <Link to={"/register"}>Register</Link>
-                </li>
-              }
-            {role === "ADMIN"
-              ? <li className='liNavbar'>
-                <Link to={"/admin"}>Administrador</Link>
-                </li>
-              : <></>
-            }
+          {user
+          ? <li className='liNavbar home' id="login">
+             <Icon icon="material-symbols:person-off" className='icons' />
+              <Link onClick={logout}>Log Out</Link>
+            </li>
+          : <li className='liNavbar home' id="login">
+              <Icon icon="material-symbols:person-search" className='icons' />
+              <Link to={"/login"} >Log In</Link>
+            </li>
+          }
+          {user
+          ? ''
+          : <li className='liNavbar home' id="signup">
+              <Icon icon="material-symbols:person-add" className='icons' />
+              <Link to={"/register"}>Register</Link>
+            </li>
+          }
+          {user
+          ? <li className='liNavbar home' id="signup">
+              <Icon icon="material-symbols:event-available" className='icons' />
+              <Link to={"/eventsUser"}>Mis eventos</Link>
+            </li>
+          : ''
+          }
+          {role === "ADMIN"
+          ? <li className='liNavbar home'>
+              <Icon icon="eos-icons:admin" className='icons' />
+              <Link to={"/admin"}>Administrador</Link>
+            </li>
+          : <></>
+          }
         </ul>
       </div>
     </header>
-    
   )
 }
 

@@ -45,12 +45,6 @@
     transition: 0.3s;
   }
   
-  #login,
-  #signup {
-    border-radius: 5px;
-    padding: 5px 8px;
-  }
-  
   .hamburger-icon {
     margin: auto 0;
     display: none;
@@ -103,9 +97,21 @@
     height: calc(100vh - 50px);
     width: 100%;
   }
-  
   .mobile-menu li {
     margin-bottom: 10px;
+  }
+  .home{
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .icons{
+    position: relative;
+    top: -2px;
+    color: white;
+    height: 30px;
+    width: 30px;
+    padding-right: 5px;
   }
 
   

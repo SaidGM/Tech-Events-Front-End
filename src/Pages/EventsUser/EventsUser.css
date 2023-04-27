@@ -47,6 +47,13 @@
 .linkInfo{
     height:300px;
 }
+.anuncio{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 @media (min-width: 800px){
     .sectionEvent{

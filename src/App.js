@@ -9,6 +9,7 @@ import Admin from './Pages/Admin/Admin';
 import RequireAuth from './Components/requireAuth/RequireAuth';
 import Categories from './Pages/Categories/Categories';
 import AddForm from './Pages/AddForm/AddForm';
+import EventsUser from './Pages/EventsUser/EventsUser';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={<Home/>}/> 
         <Route path='/categorie/:id' element={<Categories/>}/>
         <Route path='/infoEvent/:id' element={<Info/>}/>
+        <Route path='/eventsUser' element={<EventsUser/>}/>
         <Route path='/admin' 
         element={  
           <RequireAuth>
