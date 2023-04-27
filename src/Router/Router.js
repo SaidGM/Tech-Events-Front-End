@@ -14,29 +14,29 @@ import Register from "../Pages/Register/Register"
 
 const Router = ()=> {
     return(
-        <Routes>
-          <Route path='/login' element={<LogIn />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/categorie/:id' element={<Categories />} />
-          <Route path='/infoEvent/:id' element={<Info />} />
-          <Route path='/eventsUser' element={
-            <RequireAuth>
-              <EventsUser />
-            </RequireAuth>
+      <Routes>
+        <Route path='/login' element={<LogIn />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/categorie/:id' element={<Categories />} />
+        <Route path='/infoEvent/:id' element={<Info />} />
+        <Route path='/eventsUser' element={
+          <RequireAuth>
+            <EventsUser />
+          </RequireAuth>
+        } />
+        <Route path='/admin'
+          element={
+            <RequireAuthAdmin>
+              <Admin />
+            </RequireAuthAdmin>
           } />
-          <Route path='/admin'
-            element={
-              <RequireAuthAdmin>
-                <Admin />
-              </RequireAuthAdmin>
-            } />
-          <Route path='/adminAdd' element={
-            <RequireAuth>
-              <AddForm />
-            </RequireAuth>
-          } />
-        </Routes>
+        <Route path='/adminAdd' element={
+          <RequireAuth>
+            <AddForm />
+          </RequireAuth>
+        } />
+      </Routes>
     )
 }
 
