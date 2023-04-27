@@ -5,6 +5,6 @@ describe('eventCode', () => {
     beforeEach(()=> render(<App/>))
     test('renders main page correctly', () => {
         screen.debug();
-        espect(true).toBeTruthy()
+        expect(true).toBeTruthy()
     })
 })

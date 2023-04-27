@@ -1,13 +1,13 @@
 import React, { useEffect} from 'react'
 import './FormAdd.css'
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import EventsServices from '../../Api/eventsServices';
 import Article from '../sectionArticle/Article';
 import { useNavigate } from 'react-router-dom';
 
 function FormAdd() {
 
-    const {register, formState:{errors},setValue, watch , handleSubmit} = useForm({
+    const {register, formState:{errors},setValue, watch, control , handleSubmit} = useForm({
         defaultValues:{
             title: '',
             degree: '',
@@ -72,9 +72,11 @@ function FormAdd() {
                       <input
                           name='title'
                           type="text"
+                          maxLength={50}
                           {...register('title', {
                               required: true,
                           })} />
+                      <h6>Maximo 50 palabras</h6>
                       {errors.title?.type === "required" && <p>El campo es requerido</p>}
                   </div>
                   <div className='containerFlex'>
@@ -108,7 +110,9 @@ function FormAdd() {
                           type="text"
                           name=''
                           id='inputDes'
+                          maxLength={150}
                           {...register('description', { required: true })} />
+                        <h6>Maximo 150 palabras</h6>
                       {errors.description?.type === "required" && <p>El campo es requerido</p>}
                   </div>
                   <div className='containerFlex'>
@@ -170,13 +174,30 @@ function FormAdd() {
                   <h3>Previsualización</h3>
               </div>
               <div className='containerPreviewArticle'>
-                  <Article 
-                  active= "true"
-                  date={`${watch('eventDate')} | ${watch('eventTime')}`}
-                  capacity={watch('capacity')}
-                  titleArticle={watch('title')}
-                  img={watch('urlImage')}
-                  inscribedUsersCount= '0'
+                  <Article
+                      active="true"
+                      date={`
+                    ${useWatch({
+                          control,
+                          name: 'eventDate'
+                      })} | 
+                    ${useWatch({
+                          control,
+                          name: 'eventTime'
+                      })}`}
+                      capacity={useWatch({
+                          control,
+                          name: 'capacity'
+                      })}
+                      titleArticle={useWatch({
+                          control,
+                          name: 'title'
+                      })}
+                      img={useWatch({
+                          control,
+                          name: 'urlImage'
+                      })}
+                      inscribedUsersCount='0'
                   />
               </div>
           </div>
