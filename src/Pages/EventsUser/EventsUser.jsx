@@ -29,7 +29,7 @@ function EventsUser() {
           <div className='mainPage'>
             <div className='containerFather'>
               <div className='title'>
-                <h2 className='titleAll'>Todos los eventos inscritos</h2>
+                <h2 className='titleAll'>Eventos inscritos</h2>
                 <h4 className='h4'>Lista completa de todos los eventos</h4>
               </div>
             { itemEvents.length === 0 

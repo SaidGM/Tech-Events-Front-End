@@ -59,7 +59,7 @@
     }
 }
 
-@media (min-width: 1100px){
+@media (min-width: 1000px){
     .sectionEvent{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -70,7 +70,7 @@
     }
 }
 
-@media (min-width: 1300px){
+@media (min-width: 1500px){
     .sectionEvent{
         display: grid;
         grid-template-columns: repeat(5, 1fr);

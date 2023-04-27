@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 function FormAdd() {
 
-    const {register, formState:{errors},setValue, watch, control , handleSubmit} = useForm({
+    const {register, formState:{errors},setValue, control , handleSubmit} = useForm({
         defaultValues:{
             title: '',
             degree: '',
