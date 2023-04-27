@@ -8,6 +8,8 @@ import ContainerEvents from '../../Components/containerEvents/ContainerEvents'
 
 function EventsUser() {
   const [itemEvents, setItemEvents] = useState([])
+  const [item, setItem] = useState([])
+  console.log(item);
   console.log(itemEvents.length);
 
   useEffect(()=>{
@@ -15,6 +17,8 @@ function EventsUser() {
       .then((data)=>{setItemEvents(data.filter((item) => {
         return item.isInscribedUser === true
       }))})
+      EventsServices.myEvents()
+      .then((data)=>{setItem(data)})
   },[])
   
   return (

@@ -19,6 +19,7 @@ Project in development in which the administrator has the power to execute the C
 - React
 - Node.js v16.15.1
 - React Router Dom
+- React Hook Form (Formularios)
 
 ## 🛠️ Open and run the project
 
@@ -74,6 +75,7 @@ Tambiem incluye otro filtrado que separa entre master clases, webinars y tallere
 - React
 - Node.js v16.15.1
 - React Router Dom
+- React Hook Form (Formularios)
 
 ## 🛠️ Abre y ejecuta el proyecto
 
