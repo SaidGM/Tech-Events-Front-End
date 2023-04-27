@@ -76,7 +76,6 @@
 .titles{
     display: flex;
     margin: auto;
-    display: flex;
     width: 90%;
     justify-content: space-evenly;
     padding-bottom: 10px;
@@ -103,6 +102,9 @@
         grid-template-columns: 150px repeat(6, 155px) repeat(2, 30px);
         text-align: center;
     }  
+    .eventTitle{
+        text-align: start;
+    }
 }
 @media (min-width: 1600px){
     .dashBoardRow{

@@ -120,7 +120,7 @@
     }
     .containerOptions{
         border-radius: 0 50px 0 0;
-        width: 100%;
+        width: 80%;
     }
     .containerInfo{
         border-radius: 50px 0 0 0;
@@ -151,5 +151,11 @@
     }
     .containerTitle{
         margin-top: 200px ;
+    }
+}
+
+@media (min-width: 1100px){
+    .imgInfo{
+        width: 50%;
     }
 }

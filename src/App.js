@@ -10,25 +10,34 @@ import RequireAuth from './Components/requireAuth/RequireAuth';
 import Categories from './Pages/Categories/Categories';
 import AddForm from './Pages/AddForm/AddForm';
 import EventsUser from './Pages/EventsUser/EventsUser';
+import RequireAuthAdmin from './Components/requireAuth/RequireAuthAdmin';
 
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path='/login' element={<LogIn/>}/> 
-        <Route path='/register' element={<Register/>}/> 
-        <Route path='/' element={<Home/>}/> 
-        <Route path='/categorie/:id' element={<Categories/>}/>
-        <Route path='/infoEvent/:id' element={<Info/>}/>
-        <Route path='/eventsUser' element={<EventsUser/>}/>
-        <Route path='/admin' 
-        element={  
+        <Route path='/login' element={<LogIn />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/categorie/:id' element={<Categories />} />
+        <Route path='/infoEvent/:id' element={<Info />} />
+        <Route path='/eventsUser' element={
           <RequireAuth>
-            <Admin/>
+            <EventsUser />
           </RequireAuth>
-        }/>
-        <Route path='/adminAdd' element={<AddForm/>}/>
+        } />
+        <Route path='/admin'
+          element={
+            <RequireAuthAdmin>
+              <Admin />
+            </RequireAuthAdmin>
+          } />
+        <Route path='/adminAdd' element={
+          <RequireAuth>
+            <AddForm />
+          </RequireAuth>
+        } />
       </Routes>
     </> 
   ); 
