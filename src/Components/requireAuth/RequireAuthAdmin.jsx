@@ -5,7 +5,7 @@ const RequireAuthAdmin = ({children, redirectTo="*"}) => {
 
     const userItem = localStorage.getItem("auth_role")
 
-    if (userItem == "ADMIN") {  
+    if (userItem === "ADMIN") {  
         return children ? children : <Outlet/>
     }
         return <Navigate to={redirectTo}/>

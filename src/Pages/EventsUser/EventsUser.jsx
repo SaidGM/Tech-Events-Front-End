@@ -28,7 +28,7 @@ function EventsUser() {
                 <h2 className='titleAll'>Todos los eventos inscritos</h2>
                 <h4 className='h4'>Lista completa de todos los eventos</h4>
               </div>
-            { itemEvents.length == 0 
+            { itemEvents.length === 0 
                 ? <section className='anuncio'>
                     <h1>No estas inscrito en ningún evento</h1>
                   </section>
@@ -50,8 +50,8 @@ function EventsUser() {
                           inscribedUsersCount={i.inscribedUsersCount}
                         />
                       </Link>
-                    )
-                    }
+                    )}
+                    return null;
                   })}
                   {itemEvents.map((i) => {
                     if (!i.active) {
