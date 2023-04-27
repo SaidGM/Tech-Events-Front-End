@@ -10,8 +10,6 @@ import Info from "../Pages/Info/Info"
 import LogIn from "../Pages/LogIn/LogIn"
 import Register from "../Pages/Register/Register"
 
-
-
 const Router = ()=> {
     return(
       <Routes>
