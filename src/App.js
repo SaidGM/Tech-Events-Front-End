@@ -1,7 +1,7 @@
 import './Assets/App.css';
-import ErrorBoundary from './Components/errorBoundary/ErrorBoundary';
 import Navbar from './Components/navbar/Navbar';
 import Router from './Router/Router'
+import ErrorBoundary from './Components/errorBoundary/ErrorBoundary'
 
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
     <ErrorBoundary>
       <Navbar />
       <Router>
+
       </Router>
     </ErrorBoundary>
     </> 
