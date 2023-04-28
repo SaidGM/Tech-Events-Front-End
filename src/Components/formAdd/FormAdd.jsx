@@ -128,7 +128,7 @@ function FormAdd() {
                           type="time"
                           placeholder='08:30:00'
                           {...register('eventTime', { required: true })} />
-                      {errors.eventTime?.type === "required" && <p>El campo es requerido usa el ejemplo</p>}
+                      {errors.eventTime?.type === "required" && <p>El campo es requerido</p>}
                   </div>
                   <div className='containerFlex'>
                       <label htmlFor="">Categoria:</label>
