@@ -9,9 +9,7 @@ import ContainerEvents from '../../Components/containerEvents/ContainerEvents'
 function EventsUser() {
   const [itemEvents, setItemEvents] = useState([])
   const [item, setItem] = useState([])
-  console.log(item);
-  console.log(itemEvents.length);
-
+  
   useEffect(()=>{
       EventsServices.allEventsToken()
       .then((data)=>{setItemEvents(data.filter((item) => {

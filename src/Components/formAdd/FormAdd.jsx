@@ -21,6 +21,7 @@ function FormAdd() {
     })
 
     const navigation = useNavigate()
+    const id = localStorage.getItem("id")
 
     useEffect(()=>{
         if (id) {
@@ -35,13 +36,9 @@ function FormAdd() {
                 setValue('categoryId', data.category.id)
                 setValue('capacity', data.capacity)
                 setValue('urlImage', data.urlImage)
-            })
-        }
+            })}
     },[])
     
-    const id = localStorage.getItem("id")
-    console.log(id);
-
     const onSubmit = (data, e) => {
         e.preventDefault();
         if (id) { 
